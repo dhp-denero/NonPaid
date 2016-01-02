@@ -10,8 +10,8 @@
             <field name="arch" type="xml">
       	        <field name="version_id" position="after">
       	        
-      	            <field name="url"/>
-      	            <field name="ref_url"/>
+      	            <field name="url"widget="url"/>
+      	            <field name="ref_url" widget="url"/>
 
       	        </field>
       	    </field>
