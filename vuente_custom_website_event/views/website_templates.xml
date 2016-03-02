@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="vuente_website_event_dollar_first" name="Dollar First" inherit_id="website_event.registration_attendee_details">
+            <xpath expr="//div/div/form/div/div[2]/div/t[3]/h4/strong" position="replace">
+                <strong>
+                    Ticket Type #<t t-raw="counter_type"/>: <t t-esc="ticket['name']"/> (
+                    <t t-if="ticket['price'] > 0">
+                        <t t-esc="website.pricelist_id.currency_id.symbol"/>
+                        <t t-esc="ticket['price']"/>
+                    </t>
+                    <t t-if="ticket['price'] == 0">Free</t>)
+                </strong>
+            </xpath>
+	</template>
+
+    </data>
+</openerp>
