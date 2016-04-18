@@ -1,0 +1,2 @@
+id,name,model,function,interval_number,interval_type,numbercall,active
+"unfinished_project_tasks","Unfinished Tasks",project.project,check_all_tasks,3,days,-1,true

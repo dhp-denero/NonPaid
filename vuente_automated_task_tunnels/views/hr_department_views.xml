@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_department_tasks" model="ir.ui.view">
+            <field name="name">hr.department.tasks</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+      	        <field name="manager_id" position="after">
+      	            <group>
+      	            <field name="task_ids"/>
+      	            <field name="employee_ids"/>
+      	            </group>
+      	        </field>
+      	    </field>
+        </record>
+
+        <record id="new_department_task" model="mail.template">
+            <field name="name">Department Notify Employees</field>
+            <field name="model_id" ref="model_hr_employee"></field>
+            <field name="email_from">${(user.email)|safe}</field>
+            <field name="email_to">${object.work_email}</field>
+            <field name="subject">New task in your department</field>
+            <field name="body_html"><![CDATA[
+                <p>Dear ${object.name},</p>
+                <p>A new task has been created in your department __department__</p>
+                <p>The task is called __task_name__</p>
+                <p>__task_description__</p>
+            ]]>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

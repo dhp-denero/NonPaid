@@ -1,0 +1,2 @@
+id,name,model,function,interval_number,interval_type,numbercall,active
+"sendgrid_check","SendGrid Check",mail.mail.sendgrid.account,check_sendgrid_stats,1,days,-1,true

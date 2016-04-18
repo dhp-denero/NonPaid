@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="slide_channel_images" model="ir.ui.view">
+            <field name="name">slide.channel.image</field>
+            <field name="model">slide.channel</field>
+            <field name="inherit_id" ref="website_slides.view_slide_channel_form"/>
+            <field name="arch" type="xml">
+      	        <field name="category_ids" position="before">
+      	           <field name="image" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"/>
+      	        </field>
+      	    </field>
+        </record>
+        
+    </data>
+</openerp>

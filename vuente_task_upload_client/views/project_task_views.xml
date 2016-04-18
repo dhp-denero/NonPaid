@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="task_upload" model="ir.ui.view">
+            <field name="name">task.upload</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+      	        <field name="user_id" position="after">
+      	            <button type="object" name="upload_task_vuente" string="Upload Task to Vuente"/>
+      	        </field>
+      	    </field>
+        </record>
+        
+    </data>
+</openerp>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <template id="twitter" inherit_id="website.assets_frontend" name="Twitter Snippet">
+        <xpath expr="/t" position="inside">
+            <link rel="stylesheet" href="/website_feature_boxes/static/src/css/website_feature_boxes.css"/>
+        </xpath>
+    </template>
+    
+        <template id="html_feature_boxes_editor" inherit_id="website.assets_editor" name="Website Feature Boxes Resources">
+            <xpath expr="/t" position="inside">
+                <script type="text/javascript" src="/website_feature_boxes/static/src/js/website.feature.boxes.js" />
+            </xpath>
+        </template>
+
+        <template id="website_feature_boxes_options" name="Form Builder Options" inherit_id="website.snippet_options">
+            <xpath expr="//div" position="after">
+                <div data-js='feature_boxes'
+                    data-selector=".feature_boxes"
+                    data-drop-in=".oe_structure, [data-oe-type=html]">
+                </div>
+            </xpath>
+        </template>
+        
+        <template id="website_feature_boxes_navbar" inherit_id="website.snippets" name="Website Feature Boxes Navbar">
+            <xpath expr="//div[@id='snippet_feature']/div[@class='o_panel_body']" position="inside">   
+                <t t-snippet="website_feature_boxes.s_feature_boxes" t-thumbnail="/website_feature_boxes/static/src/img/ui/snippet_thumb_feature_boxes.jpg"/>
+                <t t-snippet="website_feature_boxes.s_bullet_line" t-thumbnail="/website_feature_boxes/static/src/img/ui/snippet_thumb_bullet_line.jpg"/>                
+                <t t-snippet="website_feature_boxes.s_feature_right" t-thumbnail="/website_feature_boxes/static/src/img/ui/snippet_thumb_feature_right.jpg"/>                
+            </xpath>
+        </template>      
+
+        <template id="s_bullet_line" name="Bullet Line">
+            <section class="bullet_line">
+                <div class="bullerBr"> 
+                    <span> </span> 
+                    <i class="fa fa-circle"></i>
+                    <label class="smlwidth"> </label>
+	        </div>			
+            </section>
+        </template>
+        
+        <template id="s_feature_right" name="Feature Right">
+            <section class="feature_right">
+            <div class="container">
+                <div class="row-fluid">
+                    <div style="opacity: 1; right: 0px;" class="col-md-6 fade-in">
+                        <img class="feature-right-img" src="/website_feature_boxes/static/src/img/biglogo.png"/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <ul class="view">
+                            <li style="opacity: 1; bottom: 0px;" class="left from-bottom"><img style="width:50px;height:50px;" class="fa fa-lightbulb-o feature-icon" src="/website_feature_boxes/static/src/img/handshake.png"/></li>
+                            <li style="opacity: 1; bottom: 0px;" class="right from-bottom"><h4>Training</h4> My children and I have been seeing Michelle after experiencing family trauma a number of years ago.</li>
+
+                            <li style="opacity: 1; bottom: 0px;" class="left from-bottom"><img style="width:50px;height:50px;" class="fa fa-lightbulb-o feature-icon" src="/website_feature_boxes/static/src/img/handshake.png"/></li>
+                            <li style="opacity: 1; bottom: 0px;" class="right from-bottom"><h4>Training</h4> My children and I have been seeing Michelle after experiencing family trauma a number of years ago.</li>            
+
+                            <li style="opacity: 1; bottom: 0px;" class="left from-bottom"><img style="width:50px;height:50px;" class="fa fa-lightbulb-o feature-icon" src="/website_feature_boxes/static/src/img/handshake.png"/></li>
+                            <li style="opacity: 1; bottom: 0px;" class="right from-bottom"><h4>Training</h4> My children and I have been seeing Michelle after experiencing family trauma a number of years ago.</li>            
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </section>
+        </template>
+        
+        <template id="s_feature_boxes" name="Feature Boxes">
+            <section class="feature_boxes">
+
+
+
+
+<div class="container">
+
+<div class="row-fluid">
+            <div style="opacity: 1; bottom: 0px;" class="col-md-4 feature-box from-bottom">
+                <div class="box-content">
+                    <img style="margin-top: -30%;" class="fa fa-lightbulb-o feature-icon" src="/website_feature_boxes/static/src/img/counselling.png"/><br/><br/><br/>
+
+                    <h3>Counselling</h3>
+                    <p>Professional Expert ACT Counsellors.<br/>
+                        Face To Face<br/>
+                        Skype<br/>
+                        Phone </p>
+                    <a href="#" class="read">Read More !</a>
+                </div>
+            </div>
+
+            <div style="opacity: 1; bottom: 0px;" class="col-md-4 feature-box from-bottom">
+                <div class="box-content">
+                    <img style="margin-top: -30%;" class="fa fa-lightbulb-o feature-icon" src="/website_feature_boxes/static/src/img/handshake.png"/><br/><br/><br/>
+                    <h3>Employee Assistance</h3>
+                    <p>Employee Assistance Program (EAP) for you as a business owner, your employees and their children (optional)
+                    </p><br/>
+                    <a href="#" class="read">Read More !</a>
+                </div>
+            </div>
+            <div style="opacity: 1; bottom: 0px;" class="col-md-4 feature-box from-bottom">
+                <div class="box-content">
+                    <img style="margin-top: -30%;" class="fa fa-lightbulb-o feature-icon" src="/website_feature_boxes/static/src/img/training.png"/><br/><br/><br/>
+                    <h3>Training</h3>
+                    <p>Michelle Trudgen is an expert trainer of Acceptance and Commitment Therapy (ACT).   <br/><br/><br/></p>
+                    <a href="#" class="read">Read More !</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</div>
+
+
+
+            </section>
+        </template>
+        
+    </data>
+</openerp>

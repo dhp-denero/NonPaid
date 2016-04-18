@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="task_upload_thankyou" name="Module List" page="True">
+             <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center">Thank You</h1>
+                            <h3 class="text-muted text-center">We will review this task and get back to you shortly</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+           </t>
+        </template>
+
+    </data>
+</openerp>

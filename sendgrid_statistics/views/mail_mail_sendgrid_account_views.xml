@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <record id="mail_mail_sendgrid_account_view_form" model="ir.ui.view">
+          <field name="name">mail.mail.sendgrid.account.view.form</field>
+          <field name="model">mail.mail.sendgrid.account</field>
+          <field name="arch" type="xml">
+      	      <form>
+      	          <group>
+      	              <field name="last_sync"/>
+                      <field name="api_key"/>
+      	          </group>
+      	      </form>
+      	  </field>
+      </record>
+
+      <record id="mail_mail_sendgrid_account_view_tree" model="ir.ui.view">
+          <field name="name">mail.mail.sendgrid.account.view.tree</field>
+          <field name="model">mail.mail.sendgrid.account</field>
+          <field name="arch" type="xml">
+      	      <tree>
+      	          <field name="last_sync"/>
+                  <field name="api_key"/>
+      	      </tree>
+      	  </field>
+      </record>
+      
+      <record id="mail_mail_sendgrid_account_action" model="ir.actions.act_window">
+          <field name="name">mail.mail.sendgrid.account.action</field>
+          <field name="res_model">mail.mail.sendgrid.account</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+	  <field name="help" type="html">
+		<p>
+                    List of SendGrid Accounts.
+                </p>
+      	  </field>
+      </record>
+
+      <menuitem id="mail_mail_sendgrid_account_menu" name="SendGrid Mail Accounts" parent="base.menu_email" sequence="200"/>
+   
+   </data>
+</openerp>

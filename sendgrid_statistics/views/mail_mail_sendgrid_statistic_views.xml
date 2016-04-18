@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <record id="mail_mail_sendgrid_statistic_view_form" model="ir.ui.view">
+          <field name="name">mail.mail.sendgrid.statistic.view.form</field>
+          <field name="model">mail.mail.sendgrid.statistic</field>
+          <field name="arch" type="xml">
+      	      <form>
+      	          <group>
+      	              <field name="stat_date"/>
+                      <field name="blocks"/>
+                      <field name="bounce_drops"/>
+                      <field name="bounces"/>
+                      <field name="clicks"/>
+                      <field name="deferred"/>
+                      <field name="delivered"/>
+                      <field name="invalid_emails"/>
+                      <field name="opens"/>
+                      <field name="processed"/>
+                      <field name="requests"/>
+                      <field name="spam_report_drops"/>
+                      <field name="spam_reports"/>
+                      <field name="unique_opens"/>
+                      <field name="unsubscribe_drops"/>
+                      <field name="unsubscribes"/>
+      	          </group>
+      	      </form>
+      	  </field>
+      </record>
+
+      <record id="mail_mail_sendgrid_statistic_view_tree" model="ir.ui.view">
+          <field name="name">mail.mail.sendgrid.statistic.view.tree</field>
+          <field name="model">mail.mail.sendgrid.statistic</field>
+          <field name="arch" type="xml">
+      	      <tree>
+      	          <field name="stat_date"/>
+      	          <field name="bounces"/>
+      	          <field name="delivered"/>
+      	          <field name="invalid_emails"/>
+      	          <field name="opens"/>
+      	          <field name="unsubscribes"/>
+      	          <field name="clicks"/>
+      	      </tree>
+      	  </field>
+      </record>
+      
+      <record id="mail_mail_sendgrid_statistic_action" model="ir.actions.act_window">
+          <field name="name">mail.mail.sendgrid.statistic.action</field>
+          <field name="res_model">mail.mail.sendgrid.statistic</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+	  <field name="help" type="html">
+		<p>
+                    List of SendGrid Mail Reports.
+                </p>
+      	  </field>
+      </record>
+
+      <menuitem id="mail_mail_sendgrid_statistic_menu" name="SendGrid Mail Statistics" parent="base.menu_email" sequence="210"/>
+   
+   </data>
+</openerp>

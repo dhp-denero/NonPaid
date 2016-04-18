@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!--
+<template id="end_panel" inherit_id="website_sale.products_categories" active="False" customize_show="True" name="3 Panel Layout">
+  <xpath expr="//div[@id='products_grid']" position="after">
+      <div id="products_grid_after" class="col-md-3 hidden-xs">
+          
+      </div>
+  </xpath>
+  
+</template>
+-->
+    </data>
+</openerp>

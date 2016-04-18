@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+        
+        <record id="unfinished_tasks" model="mail.template">
+            <field name="name">Unfinished Tasks Email</field>
+            <field name="model_id" ref="model_project_project"></field>
+            <field name="email_from">${(user.email)|safe}</field>
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="subject">Unfinished tasks report</field>
+            <field name="body_html"><![CDATA[
+                <p>Dear ${object.user_id.name},</p>
+                <p>Here are a list of unfinished task in the project ${object.name}</p>
+                <p>__task_list__</p>
+            ]]>
+            </field>
+        </record>
+        
+</data>
+</openerp>

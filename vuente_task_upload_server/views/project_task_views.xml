@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="task_upload_server" model="ir.ui.view">
+            <field name="name">task.upload</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+      	        <notebook position="inside">
+      	            <page string="Remote Task Details">
+      	                <group>
+      	                    <field name="remote_task_id"/>
+      	                    <field name="remote_task_host"/>
+      	                    <field name="remote_task_url" widget="url"/>
+                        </group>
+      	            </page>
+      	        </notebook>
+      	    </field>
+        </record>
+        
+    </data>
+</openerp>

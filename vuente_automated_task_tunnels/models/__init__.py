@@ -1,0 +1,1 @@
+import marketing_campaign_activity, task_template, project_task, hr_department, hr_employee
