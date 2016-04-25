@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+            
+        <record id="slide_slide_categories" model="ir.ui.view">
+            <field name="name">slide.slide.categories</field>
+            <field name="model">slide.slide</field>
+            <field name="inherit_id" ref="website_slides.view_slide_slide_form"/>
+            <field name="arch" type="xml">
+      	        <field name="website_url" position="after">
+      	            <field name="blog_tag_id"/>
+      	        </field>
+      	    </field>
+        </record>
+        
+    </data>
+</openerp>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <template id="website_slide_attachments" inherit_id="website_slides.slide_detail_view" name="Slide Attachmenets">
+            <xpath expr="//ul[@class='nav nav-tabs']" position="inside">
+                <li>
+	            <a t-attf-href="/blog/#{slide.slide_blog_url}">
+	                <i class="fa fa-newspaper-o"/> Articles
+	            </a>
+                </li>
+            </xpath>
+            
+            <xpath expr="//div[@class='tab-content']" position="inside">
+                <div class="tab-pane fade" id="articles">
+                    
+                </div>
+            </xpath>
+            
+        </template>
+        
+
+        <template id="website_slide_channel_cats" inherit_id="website_slides.slides_channel_header" name="Slide Category">
+            <xpath expr="//ul[@class='nav nav-tabs nav-tabs-border']" position="inside">
+                <li>
+	            <a t-attf-href="/blog/#{channel.slide_blog_url}">
+	                <i class="fa fa-newspaper-o"/> Articles
+	            </a>
+                </li>
+            </xpath>            
+        </template>
+        
+        
+        
+    </data>
+</openerp>
