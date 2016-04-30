@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="vuente_website_event_date_button" name="Date and Button" inherit_id="website_event.index">
+            <xpath expr="//div[@itemprop='location']" position="replace">
+                <a t-attf-href="/event/#{ slug(event) }/#{(not event.menu_id) and 'register' or ''}"><button class="btn btn-primary">More Details</button></a>
+            </xpath>
+	</template>
+
+        <template id="vuente_website_event_no_date_filter" name="Remove Date Filter" inherit_id="website_event.event_left_column" customize_show="True">
+            <xpath expr="//ul" position="replace">
+	    
+	    </xpath>
+        </template>  
+
+    </data>
+</openerp>
