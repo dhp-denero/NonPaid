@@ -8,20 +8,25 @@
             </xpath>
 
             <xpath expr="//section[2]" position="replace">
-            <section  class="oe_slides_promote_box mt32 mb32" t-foreach="slides" t-as="slide">
+            <section class="oe_slides_promote_box mt32 mb32" t-foreach="slides" t-as="slide">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 mt16 mb16">
-                            <a t-attf-href="/slides/slide/#{slug(slide)}">
+                                <h3><a t-attf-href="/slides/slide/#{slug(slide)}">
+                                    <t t-esc="slide.name"/>
+                                </a></h3>
+
+<a t-attf-href="/slides/slide/#{slug(slide)}">
                                 <img t-attf-src="/web/image/slide.slide/#{slide.id}/image_medium" class="img-responsive shadow oe_slides_promote_image"/>
                             </a>
                         </div>
                         <div class="col-md-7 mt16 mb16">
-                            <h3 class="row">
+                            <h3 class="row"><!--
                                 <a t-attf-href="/slides/slide/#{slug(slide)}">
                                     <t t-esc="slide.name"/>
-                                </a>
+                                </a>-->
                             </h3>
+                            <br/>
                             <div class="row mt8 mb8" t-if="slide.tag_ids">
                                 <t t-foreach="slide.tag_ids" t-as="slide_tag">
                                     <a t-attf-href="/slides/#{slug(channel)}/tag/#{slug(slide_tag)}" t-attf-class="label label-default #{tag and tag.id == slide_tag.id and 'label-primary' ''}" t-field="slide_tag.name"/>
@@ -41,7 +46,7 @@
             </section>
 
             </xpath>
-	</template>
+            </template>
 
     </data>
 </openerp>

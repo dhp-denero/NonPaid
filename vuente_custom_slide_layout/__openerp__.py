@@ -1,6 +1,6 @@
 {
     'name': "Vuente Custom Slide Layout",
-    'version': "1.0",
+    'version': "1.0.1",
     'author': "Vuente",
     'website': 'http://www.vuente.com',
     'category': "Tools",
