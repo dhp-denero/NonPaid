@@ -6,6 +6,12 @@
             <xpath expr="//div[@itemprop='location']" position="replace">
                 <a t-attf-href="/event/#{ slug(event) }/#{(not event.menu_id) and 'register' or ''}"><button class="btn btn-primary">More Details</button></a>
             </xpath>
+            <xpath expr="//span[@itemprop='startDate']" position="replace">
+                <span itemprop="startDate" t-esc="event.date_begin_located[:-9].split('-')[2] + '/' + event.date_begin_located[:-8].split('-')[1] + '/' + event.date_begin_located[:-8].split('-')[0] + event.date_begin_located[10:-3]"> </span>
+            </xpath>
+            <xpath expr="//span[@itemprop='endDate']" position="replace">
+                <span itemprop="endDate" t-esc="event.date_end_located[:-9].split('-')[2] + '/' + event.date_end_located[:-8].split('-')[1] + '/' + event.date_end_located[:-8].split('-')[0] + event.date_end_located[10:-3]"> </span> (
+            </xpath>
 	</template>
 
         <template id="vuente_website_event_no_date_filter" name="Remove Date Filter" inherit_id="website_event.event_left_column" customize_show="True">
@@ -13,6 +19,24 @@
 	    
 	    </xpath>
         </template>  
+
+        <template id="vuente_website_date_format" name="Change Date Format" inherit_id="website_event.event_description_full">
+            <xpath expr="//span[@t-esc='event.date_begin_located[:-3]']" position="replace">
+                <span itemprop="startDate" t-esc="event.date_begin_located[:-9].split('-')[2] + '/' + event.date_begin_located[:-8].split('-')[1] + '/' + event.date_begin_located[:-8].split('-')[0] + event.date_begin_located[10:-3]"> </span>
+	    </xpath>
+            <xpath expr="//span[@t-esc='event.date_end_located[:-3]']" position="replace">
+                <span itemprop="endDate" t-esc="event.date_end_located[:-9].split('-')[2] + '/' + event.date_end_located[:-8].split('-')[1] + '/' + event.date_end_located[:-8].split('-')[0] + event.date_end_located[10:-3]"> </span>
+	    </xpath>
+        </template>  
+
+        <template id="vuente_website_date_format_header" name="Change Date Format (Header)" inherit_id="website_event.event_details">
+            <xpath expr="//t[@t-esc='event.date_begin_located[:-3]']" position="replace">
+                <span itemprop="startDate" t-esc="event.date_begin_located[:-9].split('-')[2] + '/' + event.date_begin_located[:-8].split('-')[1] + '/' + event.date_begin_located[:-8].split('-')[0] + event.date_begin_located[10:-3]"> </span>
+	    </xpath>
+            <xpath expr="//t[@t-esc='event.date_end_located[:-3]']" position="replace">
+                <span itemprop="endDate" t-esc="event.date_end_located[:-9].split('-')[2] + '/' + event.date_end_located[:-8].split('-')[1] + '/' + event.date_end_located[:-8].split('-')[0] + event.date_end_located[10:-3]"> </span>
+	    </xpath>
+        </template>
 
     </data>
 </openerp>
