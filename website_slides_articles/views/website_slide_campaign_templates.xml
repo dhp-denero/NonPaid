@@ -30,6 +30,44 @@
             </xpath>            
         </template>
         
+        <template id="vuente_channel_categories" name="Slide Channel Category">
+    <t t-call="website.layout">
+        <div class="container mt16">
+            <h1>Select a Channel in the category <t t-esc="vuente_category"/></h1>
+            <div class="row">
+                <t t-foreach="channels" t-as="channel">
+                    <div t-if="channel_index % 3 == 0" class="clearfix"/>
+                    <div class="col-sm-4 mb32">
+                        <div class="well well-sm">
+                            <div>
+                                <a t-attf-href="/slides/#{slug(channel)}">
+                                    <img t-if="channel.promoted_slide_id" t-attf-src="/web/image/slide.slide/#{channel.promoted_slide_id.id}/image_medium" class="img-responsive oe_slides_channel_thumbnail"/>
+                                    <img t-if="not channel.promoted_slide_id" src="/website_slides/static/description/channel-default.jpg" class="img-responsive oe_slides_opacity"/>
+                                </a>
+                            </div>
+                            <div>
+                                <div class="mt4 pull-right">
+                                    <t t-call="website.publish_management">
+                                        <t t-set="object" t-value="channel"/>
+                                        <t t-set="publish_edit" t-value="True"/>
+                                        <t t-set="action" t-value="'website_slides.action_slide_channels'"/>
+                                    </t>
+                                </div>
+                                <h3 class="mt4 mb4 lead" t-att-title="channel.name" style="width:55%">
+                                    <a t-attf-href="/slides/#{slug(channel)}" t-esc="channel.name"/>
+                                </h3>
+                                <span class="label label-warning" t-if="not channel.can_see_full">Private channel</span>
+                            </div>
+                            <div>
+                                <p class="text-muted oe_no_empty" t-field="channel.description"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>        
+        </template>
         
         
     </data>

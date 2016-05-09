@@ -8,6 +8,30 @@
             </xpath>
 
             <xpath expr="//section[2]" position="replace">
+
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb16" t-if="not slide_type and category_datas and not tag">
+                            <t t-foreach="category_datas" t-as="category">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt8 oe_slides_bottom_border">
+                                        <a t-if="category['id']" t-attf-href="/slides/#{slug(channel)}/category/#{category['id']}" class="h1 mt0 mb0">
+                                            <t t-esc="category['name']"/>
+                                        </a>
+                                        <span t-if="not category['id']" title="Uncategorized presentation" class="h1 mt0 mb0">
+                                            <t t-esc="category['name']"/>
+                                        </span>
+                                        <a t-attf-href="/slides/#{slug(channel)}/category/#{category['id']}" class="pull-right" t-if="category['total'] - 4 &gt; 0 and category['id']">
+                                            <i class="fa fa-arrow-right"/> See all
+                                        </a>
+                                    </div>
+                                </div>
+<br/>
+
+
+
+
+<t t-set="slides" t-value="category['slides']"/>
+
             <section class="oe_slides_promote_box mt32 mb32" t-foreach="slides" t-as="slide">
                 <div class="container">
                     <div class="row">
@@ -44,6 +68,19 @@
                 </div>
 
             </section>
+
+
+
+
+
+
+
+
+
+                            </t>
+                        </div>
+
+
 
             </xpath>
             </template>

@@ -9,9 +9,24 @@
             <field name="arch" type="xml">
       	        <field name="share_template_id" position="after">
       	            <field name="blog_tag_id"/>
+      	            <field name="channel_category_id"/>
       	        </field>
       	    </field>
         </record>
+
+        <record id="slide_channel_vuente_categories" model="ir.ui.view">
+            <field name="name">slide.channel.categories</field>
+            <field name="model">vuente.slide.channel.category</field>
+            <field name="arch" type="xml">
+      	        <form>
+      	        <group>
+      	            <field name="id"/>
+      	            <field name="name"/>
+      	        </group>
+      	        </form>
+      	    </field>
+        </record>
+
         
     </data>
 </openerp>
