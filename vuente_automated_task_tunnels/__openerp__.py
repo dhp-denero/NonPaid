@@ -1,6 +1,6 @@
 {
     'name': "Vuente Automated Task Tunnel",
-    'version': "1.0",
+    'version': "1.1",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Automaticly crate tasks during mail campaigns",
@@ -10,6 +10,8 @@
         'views/project_task_views.xml',
         'views/hr_department_views.xml',
         'views/hr_employee_views.xml',
+        'views/marketing_campaign.xml',
+        'views/mail_template_views.xml',
     ],
     'demo': [],
     'depends': ['project', 'hr', 'marketing_campaign'],

@@ -1,1 +1,1 @@
-import marketing_campaign_activity, task_template, project_task, hr_department, hr_employee
+import mail_template, marketing_campaign, marketing_campaign_activity, task_template, project_task, hr_department, hr_employee

@@ -6,12 +6,15 @@ from openerp import api, fields, models
 import logging
 _logger = logging.getLogger(__name__)
 
-class MarketingCampaignTask(models.Model):
+class MarketingCampaignActivityTask(models.Model):
 
     _inherit = "marketing.campaign.activity"
     
     type = fields.Selection(selection_add=[('task','Task')])
     task_template_id = fields.Many2one('task.template', string="Task Template")
+    vuente_from_email = fields.Char(string="From Email")
+    vuente_mail_server = fields.Many2one('ir.mail_server', string="Mail Server")
+    vuente_reply_to = fields.Char(string="Reply To")
     
     @api.model
     def _process_wi_task(self, activity, workitem):

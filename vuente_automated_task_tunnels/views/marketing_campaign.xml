@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_marketing_campaign_activity_form_inherit_sms_frame_mail_campaign_type" model="ir.ui.view">
+            <field name="name">sms.marketing.campaign.activity</field>
+            <field name="model">marketing.campaign</field>
+            <field name="inherit_id" ref="marketing_campaign.view_marketing_campaign_form"/>
+            <field name="arch" type="xml">
+      	        <field name="mode" position="after">
+      	            <field name="sort_type"/>
+      	            <field name="vuente_from_email"/>
+      	            <field name="vuente_mail_server"/>
+      	            <field name="vuente_reply_to"/>
+      	        </field>
+      	        <field name="activity_ids" position="replace">
+      	            <field name="activity_ids" context="{'default_object_id': object_id, 'default_campaign_id': active_id, 'default_vuente_from_email': vuente_from_email, 'default_vuente_mail_server': vuente_mail_server, 'default_vuente_reply_to': vuente_reply_to}"/>      	        
+      	        </field>
+      	    </field>
+        </record>
+        
+      <menuitem id="task_tunnel_task_menu" name="Task Tunnel (Tasks)" parent="base.menu_custom" sequence="160" action="task_tunnel_task_action"/>
+        
+    </data>
+</openerp>

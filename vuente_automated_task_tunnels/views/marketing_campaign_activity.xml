@@ -2,16 +2,36 @@
 <openerp>
     <data>
 
-        <record id="view_marketing_campaign_activity_form_inherit_sms_frame_mail_campaign" model="ir.ui.view">
+        <record id="view_marketing_campaign_activity_form_inherit_vuente_automated_task_tunnels" model="ir.ui.view">
             <field name="name">sms.marketing.campaign.activity</field>
             <field name="model">marketing.campaign.activity</field>
             <field name="inherit_id" ref="marketing_campaign.view_marketing_campaign_activity_form"/>
             <field name="arch" type="xml">
       	        <field name="type" position="after">
       	            <field name="task_template_id" attrs="{'required':[('type','=','task')], 'invisible':[('type','!=','task')]}"/>
+      	            <field name="vuente_from_email" invisible="True"/>
+      	            <field name="vuente_mail_server" invisible="True"/>
+      	            <field name="vuente_reply_to" invisible="True"/>      	            
+      	        </field>
+      	        <field name="email_template_id" position="replace">
+      	            <field name="email_template_id" attrs="{'required':[('type','=','email')], 'invisible':[('type','!=','email')]}" context="{'default_model_id':object_id, 'default_email_from': vuente_from_email, 'default_email_to': '${object.email}', 'default_mail_server_id': vuente_mail_server, 'default_reply_to': vuente_reply_to}"/>
       	        </field>
       	    </field>
         </record>
+
+      <record id="task_tunnel_task_action" model="ir.actions.act_window">
+          <field name="name">marketing.campaign.task.tunnel.task</field>
+          <field name="res_model">marketing.campaign</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+          <field name="context" eval="'{\'default_sort_type\': \'task\',\'default_object_id\':'+str(ref('project.model_project_task'))+'}'"/>
+          <!--<field name="context">{'default_sort_type':'task'}</field>-->
+          <field name="help" type="html">
+              <p class="oe_view_nocontent_create">Create the first HTML Embed form</p>
+          </field>
+      </record>
+        
+      <menuitem id="task_tunnel_task_menu" name="Task Tunnel (Tasks)" parent="base.menu_custom" sequence="160" action="task_tunnel_task_action"/>
         
     </data>
 </openerp>
