@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <template id="vuente_web_kit_editor" inherit_id="website.assets_editor" name="Web Kit Resources">
+        <xpath expr="/t" position="inside">
+            <script type="text/javascript" src="/vuente_web_kit/static/src/js/summerfun.js" />            
+        </xpath>
+    </template>
+
+    <template id="custom_colour" inherit_id="web_editor.colorpicker" name="Custom Color-Picker">
+        <xpath expr="//table" position="before">
+            Custom Colour
+        </xpath>
+    </template>
+
+  </data>
+</openerp>
