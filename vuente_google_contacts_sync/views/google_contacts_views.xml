@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+      <record id="google_contact_sync_view_form" model="ir.ui.view">
+          <field name="name">google.contacts.view.form</field>
+          <field name="model">google.contacts</field>
+          <field name="arch" type="xml">
+              <form>
+                  <button type="object" name="g_contact_download" string="Download Google Contacts"/>
+              </form>
+          </field>
+      </record>
+
+      <record id="google_contacts_action" model="ir.actions.act_window">
+          <field name="name">google_contacts.action</field>
+          <field name="res_model">google.contacts</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">form</field>
+	  <field name="target">new</field>
+	  <field name="help" type="html">
+		<p>
+                    Sync Google contacts.
+                </p>
+      	  </field>
+      </record>
+
+      <record id="google_contacts_contact_action" model="ir.actions.act_window">
+          <field name="name">google_contacts_contact.action</field>
+          <field name="res_model">res.partner</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+          <field name="domain">[('google_contacts_id','!=', False)]</field>
+          <field name="help" type="html">
+		<p>
+                    Do not create here
+                </p>
+      	  </field>
+      </record>
+
+      <menuitem id="google_contacts_menu" name="Google Contact Sync" parent="base.menu_administration" sequence="200" action="google_contacts_action"/>
+      <menuitem id="google_contacts_contacts_menu" name="Google Contacts" parent="base.menu_sales" sequence="200" action="google_contacts_contact_action"/>
+
+  </data>
+</openerp>
