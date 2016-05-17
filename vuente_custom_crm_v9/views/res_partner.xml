@@ -207,8 +207,11 @@
                                                 <label for="type"/>
                                                 <div name="div_type">
                                                     <field name="use_parent_address"/>
-                                                    
+                                                    <group>
+                                                    <group>
                                                     <field class="oe_inline" name="type"/>
+                                                    </group>
+                                                    </group>
                                                 </div>
                                                 <label for="street" string="Address" attrs="{'invisible': [('use_parent_address','=', True)]}"/>
                                                 <div attrs="{'invisible': [('use_parent_address','=', True)]}" name="div_address">
