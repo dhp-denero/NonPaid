@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <record id="my_vuente_finance_view_partner_form" model="ir.ui.view">
+	<field name="name">res.partner.form My finance Module</field>
+	<field name="model">res.partner</field>
+	<field name="inherit_id" ref="base.view_partner_form"/>
+	<field name="arch" type="xml">
+            <notebook position="inside">
+	        <page string="Assetts and Liabilities">
+	            <group>
+	                <field name="finance_custom_field_1"/>
+	                <field name="finance_custom_field_2"/>
+	                <field name="finance_custom_field_3"/>
+	                <field name="finance_custom_field_4"/>
+	                <field name="finance_custom_field_5"/>
+	            </group>
+	        </page>
+	        <page string="Personal Details">
+	            <group>
+	                <field name="finance_custom_field_6"/>
+	                <field name="finance_custom_field_7"/>
+	                <field name="finance_custom_field_8"/>
+	                <field name="finance_custom_field_9"/>
+	                <field name="finance_custom_field_10"/>
+	            </group>
+	        </page>
+	    </notebook>    
+            </field>
+        </record>  
+		
+    </data>
+</openerp>
