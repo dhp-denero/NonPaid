@@ -5,7 +5,7 @@ class VuenteResPartner(models.Model):
 
     _inherit = "res.partner"
         
-    has_image = fields.Boolean(string="Has Image")
+    #has_image = fields.Boolean(string="Has Image")
     last_name = fields.Char(string="Last Name", size=64)
     birth_date = fields.Date(string="Birth Date", help="Send a birthday wish!")
     custom_field_1 = fields.Char()
