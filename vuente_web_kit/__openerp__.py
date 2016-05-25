@@ -1,6 +1,6 @@
 {
     'name': "Vuente Web Kit",
-    'version': "1.0",
+    'version': "1.1",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Vuente changes to the website builder",
