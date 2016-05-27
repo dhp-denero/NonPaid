@@ -14,3 +14,12 @@ class MarketingCampaignFilter(models.Model):
     vuente_from_email = fields.Char(string="From Email")
     vuente_mail_server = fields.Many2one('ir.mail_server', string="Mail Server")
     vuente_reply_to = fields.Char(string="Reply To")
+    
+    @api.multi
+    def open_test_window(self):
+        self.ensure_one()
+        return {'type': 'ir.actions.act_window',
+                'res_model': 'marketing.campaign.test.member',
+                'view_mode': 'form',
+                'context': "{'default_campaign_id': " + str(self.id) + "}",
+                'target': 'new'}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <record id="our_vuente_module_view_task_form" model="ir.ui.view">
+	<field name="name">project.task Our Vuente Module Form View</field>
+	<field name="model">project.task</field>
+	<field name="inherit_id" ref="project.view_task_form2"/>
+	<field name="arch" type="xml">
+            <notebook position="inside">
+	        <page string="Custom Fields">
+	            <group>
+	                <field name="custom_field_1"/>
+	                <field name="custom_field_2"/>
+	                <field name="custom_field_3"/>
+	                <field name="custom_field_4"/>
+	                <field name="custom_field_5"/>
+	            </group>    
+	        </page>
+	    </notebook>    
+            </field>
+        </record>  
+		
+    </data>
+</openerp>

@@ -7,6 +7,9 @@
             <field name="model">marketing.campaign</field>
             <field name="inherit_id" ref="marketing_campaign.view_marketing_campaign_form"/>
             <field name="arch" type="xml">
+                <button name="state_running_set" position="before">
+                    <button type="object" name="open_test_window" string="Test Campaign"/>
+                </button>
       	        <field name="mode" position="after">
       	            <field name="sort_type"/>
       	            <field name="vuente_from_email"/>

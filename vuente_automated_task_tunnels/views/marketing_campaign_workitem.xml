@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="marketing_campaign_workitem_task_tunnel" model="ir.ui.view">
+            <field name="name">marketing.campaign.workitem.search.task.tunnel</field>
+            <field name="model">marketing.campaign.workitem</field>
+            <field name="inherit_id" ref="marketing_campaign.view_marketing_campaign_workitem_search"/>
+            <field name="arch" type="xml">
+      	        <search position="inside">
+      	            <field name="testid"/>
+      	        </search>
+      	    </field>
+        </record>
+
+    </data>
+</openerp>
