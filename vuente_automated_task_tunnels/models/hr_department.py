@@ -7,3 +7,4 @@ class HrDepartment(models.Model):
     
     task_ids = fields.One2many('project.task', 'department_id', string="Tasks")
     employee_ids = fields.Many2many('hr.employee', string="Employees")
+    on_site = fields.Boolean(string="On Website")
