@@ -1,12 +1,11 @@
 {
     'name': "Custom Invoices(Vuente)",
-    'version': "1.2",
+    'version': "1.3",
     'author': "Vuenete",
     'category': "Tools",
     'summary': "Modifies invoice layout",
     'data': [
-        'ir.ui.view.csv',
-        'res_company.xml',
+       'res_company.xml',
     ],
     'demo': [],
     'images':[
