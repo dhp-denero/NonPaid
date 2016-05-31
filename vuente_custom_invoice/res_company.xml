@@ -52,7 +52,7 @@
             <field name="arch" type="xml">
                 <t t-name="account.report_invoice_document">
                     <t t-call="report.external_layout">
-                        <div class="page" style="padding-top:50px;">
+                        <div class="page" style="padding-top:70px;">
                             <div class="row">
                                 <!--
                                 <div class="col-xs-5">
@@ -187,10 +187,12 @@
                                 <strong>Fiscal Position Remark:</strong>
                                 <span t-field="o.fiscal_position_id.note"/>
                             </p>
+                            <!--
                             <br/><br/><br/>
                             <div style="text-align:center;">
                                 Phone: 0497 389 848 | Email: anthony@anthonygardiner.com | Website: http://www.anthonygardiner.com | Bank Account: 083-294: 16-298-3660
                             </div>
+                            -->
                         </div>
                     </t>
                 </t>
