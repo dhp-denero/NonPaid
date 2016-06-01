@@ -14,6 +14,7 @@
                           <field name="google_contacts_token"/>
                           <field name="google_contacts_token_validity"/>
                           <field name="google_contacts_last_sync_date"/>
+                          <button type="object" name="g_con_sync" string="Sync User"/>
                       </group>
                   </page>
               </notebook>
