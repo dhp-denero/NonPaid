@@ -1,0 +1,2 @@
+id,name,model,function,interval_number,interval_type,numbercall,active
+"google_contacts_sync","Google Contacts Sync",google.contacts,cron_sync,1,hours,-1,true

@@ -1,3 +1,7 @@
+v1.2
+====
+* Background sync and redirect straight Google contacts
+
 v1.1.1
 ======
 * Add sync button to user screen

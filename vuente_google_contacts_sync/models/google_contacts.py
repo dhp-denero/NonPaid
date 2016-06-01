@@ -46,10 +46,13 @@ class GoogleContacts(models.Model):
         self.ensure_one()
         
         if self.need_authorize():
-            my_from_url = request.httprequest.host_url
+            my_from_url = request.httprequest.host_url + "google/contacts/auth"
             url = self.authorize_google_uri(from_url=my_from_url)
             return {'type': 'ir.actions.act_url', 'url': url, 'target': 'self'}
 
+
+    @api.model
+    def cron_sync(self):
         gs_pool = self.env['google.service']
 
         access_token = self.env.user.google_contacts_token
@@ -108,6 +111,7 @@ class GoogleContacts(models.Model):
             else:
                 #Create new partner
                 self.env['res.partner'].create(g_contact_dict)
+
         
     def get_google_scope(self):
         return 'https://www.googleapis.com/auth/contacts.readonly'

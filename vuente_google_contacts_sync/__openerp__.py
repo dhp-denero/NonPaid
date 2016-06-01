@@ -1,6 +1,6 @@
 {
     'name': "Vuente Google Contact Sync",
-    'version': "1.1.1",
+    'version': "1.2.0",
     'author': "Vuente",
     'category': "Tools",
     'summary':'Download contacts from google contacts',
@@ -10,6 +10,7 @@
         'views/google_contacts_views.xml',
         'views/res_users_views.xml',
         'security/ir.model.access.csv',
+        'data/ir.cron.csv',
     ],
     'demo': [],
     'depends': ['google_account','crm'],

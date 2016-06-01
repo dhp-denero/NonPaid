@@ -7,7 +7,7 @@
           <field name="model">google.contacts</field>
           <field name="arch" type="xml">
               <form>
-                  <button type="object" name="g_contact_download" string="Download Google Contacts"/>
+                  <button type="object" name="g_contact_download" string="Authenticate"/>
               </form>
           </field>
       </record>
