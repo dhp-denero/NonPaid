@@ -33,11 +33,15 @@
                         <div class="row">
                             <div class="col-xs-3 pull-right">
                                 <b>From...</b><br/>
-                                <div t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;abn_number&quot;,&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="border-bottom: 1px solid black;"/> ABN: <span t-field="company.abn_number"/><br/> ACN: <span t-field="company.acn_number"/>
+                                <div t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;abn_number&quot;,&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" /> <span t-field="company.street"/><br/><span t-field="company.city"/><br/><span t-field="company.state_id.name"/><br/><span t-field="company.country_id.name"/><br/> ABN: <span t-field="company.abn_number"/><br/> ACN: <span t-field="company.acn_number"/>
                             </div>
                             <div class="col-xs-3 pull-left">
                                 <b>To...</b>
-                                <address t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="border-bottom: 1px solid black;"/>
+                                <address t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                                <span t-field="o.partner_id.street"/><br/>
+                                <span t-field="o.partner_id.city"/><br/>
+                                <span t-field="o.partner_id.state_id.name"/><br/>
+                                <span t-field="o.partner_id.country_id.name"/><br/>
                                 <span t-field="o.partner_id.vat"/>
                                 <br/><br/><br/><br/>
                             </div>
@@ -52,7 +56,7 @@
             <field name="arch" type="xml">
                 <t t-name="account.report_invoice_document">
                     <t t-call="report.external_layout">
-                        <div class="page" style="padding-top:70px;">
+                        <div class="page" style="padding-top:90px;">
                             <div class="row">
                                 <!--
                                 <div class="col-xs-5">
