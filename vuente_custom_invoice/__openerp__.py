@@ -1,6 +1,6 @@
 {
     'name': "Custom Invoices(Vuente)",
-    'version': "1.3.3",
+    'version': "1.3.4",
     'author': "Vuenete",
     'category': "Tools",
     'summary': "Modifies invoice layout",
