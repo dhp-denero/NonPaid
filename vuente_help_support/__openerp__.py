@@ -4,7 +4,7 @@
     'author': "Vuente",
     'website': 'http://www.vuente.com',
     'category': "Tools",
-    'depends': ['web'],
+    'depends': [],
     'data': [
         'views/menus.xml',
         'data/web_iframe_pages.page.csv',
