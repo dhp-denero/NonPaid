@@ -17,6 +17,9 @@
         <record model="ir.ui.view" id="report.external_layout_header">
             <field name="name">Vuente Custom Invoice</field>
             <field name="arch" type="xml">
+
+
+<?xml version="1.0"?>
 <t t-name="report.external_layout_header">     
                     <div class="header">         
                         <div class="row">
@@ -37,12 +40,14 @@
 <div t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;abn_number&quot;,&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/> <span t-field="company.street"/>
 <br/>
 -->
+<span t-field="company.name"/><br/>
 <span t-field="company.city"/><br/><span t-field="company.state_id.name"/><br/><span t-field="company.country_id.name"/><br/> ABN: <span t-field="company.abn_number"/><br/> ACN: <span t-field="company.acn_number"/>
                             </div>
                             <div class="col-xs-3 pull-left">
                                 <b>To...</b>
                                 <!--<address t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
                                 <br/>
+                                <span t-field="o.partner_id.name"/><br/>
                                 <span t-field="o.partner_id.street"/><br/>
                                 <span t-field="o.partner_id.city"/><br/>
                                 <span t-field="o.partner_id.state_id.name"/><br/>
@@ -54,6 +59,7 @@
                     </div>
                 </t>
       	    
+
       	    </field>
         </record>
 
