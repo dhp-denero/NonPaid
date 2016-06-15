@@ -1,6 +1,6 @@
 {
     'name': "Vuente Mail Tracking",
-    'version': "1.0",
+    'version': "1.1",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Tracks campaign mail open/reply/bounce rate",
