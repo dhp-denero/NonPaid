@@ -1,0 +1,1 @@
+import mail_template, marketing_campaign_activity, mail_mail_statistics, marketing_campaign

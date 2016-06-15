@@ -18,7 +18,7 @@ class MyController(http.Controller):
     def vwpc_thank_you(self, **kw):
         return http.request.render('vuente_website_partner_campaign.vwpc_thank_you', {})
 
-    @http.route('/vwpc/process', type="http", auth="public", website=True)
+    @http.route('/vwpc/process', type="http", auth="public", website=True, csrf=False)
     def vwpc_process(self, **kwargs):
         
         values = {}
@@ -26,15 +26,15 @@ class MyController(http.Controller):
             values[field_name] = field_value
         
         
-        existing_res_partner = request.env['res.partner'].sudo().search([('email','=',values['email'])])
+        #existing_res_partner = request.env['res.partner'].sudo().search([('email','=',values['email'])])
 	        	        
-	partner_id = 0
-	if len(existing_res_partner) > 0:
-	    partner_id = existing_res_partner[0].id
-	else:
-	    #Create the customer
-	    res_partner = request.env['res.partner'].sudo().create({'name':values['name'], 'TF10': values['TF10'],'email':values['email'],'mobile':values['mobile'], 'category_id':values['campaign']})
-	    partner_id = res_partner.id
+	#partner_id = 0
+	#if len(existing_res_partner) > 0:
+	#    partner_id = existing_res_partner[0].id
+	#else:
+	#Create the customer
+	res_partner = request.env['res.partner'].sudo().create({'name':values['name'],'email':values['email'],'mobile':values['mobile'], 'category_id':values['campaign'], 'comment': values['discussion'] })
+	partner_id = res_partner.id
 	                
         
 	campaign = request.env['marketing.campaign'].sudo().browse(int(values['campaign']))
