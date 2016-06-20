@@ -1,6 +1,5 @@
 openerp.vuente_help_support = function (session) {
 
-alert("test");
 
     var _t = session.web._t,
        _lt = session.web._lt;

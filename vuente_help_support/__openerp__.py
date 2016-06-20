@@ -1,6 +1,6 @@
 {
     'name': "Vuente Help and Support",
-    'version': "1.1",
+    'version': "1.1.1",
     'author': "Vuente",
     'website': 'http://www.vuente.com',
     'category': "Tools",
