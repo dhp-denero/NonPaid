@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-      <menuitem id="vuente_help_support_menu" name="Help and Support" sequence="200"/>
+      <menuitem id="vuente_help_support_menu" name="Help and Support" sequence="1001"/>
       <menuitem id="vuente_help_support_submenu1" name="Welcome" sequence="1" parent="vuente_help_support_menu"/>
       <menuitem id="vuente_help_support_submenu2" name="Menu Tutorials" sequence="2" parent="vuente_help_support_menu"/>
    
