@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp><data>
 
-<menuitem name="Pages"
-          id="menu_top"
-          groups="base.group_user"
-          sequence="100" parent="vuente_help_support_menu"/>
-<menuitem name="Configuration"
-          id="menu_configuration"
-          groups="base.group_user"
-          parent="menu_top"
-          sequence="1000"/>
+<--
+<menuitem name="Pages" id="menu_top" groups="base.group_user" sequence="100" parent="vuente_help_support_menu"/>
+<menuitem name="Configuration" id="menu_configuration" groups="base.group_user" parent="menu_top" sequence="1000"/>
+-->
 
 <record id="view_page_tree" model="ir.ui.view">
     <field name="name">web_iframe_pages.page.tree</field>
