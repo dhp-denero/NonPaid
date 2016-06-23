@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+      <record id="account_invoice_reoccuring_view_form" model="ir.ui.view">
+          <field name="name">account.invoice.reoccuring.view.form</field>
+          <field name="model">account.invoice.reoccuring</field>
+          <field name="arch" type="xml">
+              <form>
+                  <group>
+                      <field name="partner_id"/>
+                      <field name="plan_frequency"/>
+                      <field name="plan_start_date"/>
+                      <field name="next_invoice_date"/>
+                      <field name="template_invoice"/>
+                      <field name="invoice_history">
+                          <tree>
+                              <field name="create_date"/>
+                              <field name="invoice_id"/>
+                          </tree>
+                      </field>
+                  </group>
+              </form>
+          </field>
+      </record>
+
+      <record id="account_invoice_reoccuring_view_tree" model="ir.ui.view">
+          <field name="name">account.invoice.reoccuring.view.tree</field>
+          <field name="model">account.invoice.reoccuring</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="partner_id"/>
+                  <field name="plan_start_date"/>
+                  <field name="plan_frequency"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="account_invoice_reoccuring_action" model="ir.actions.act_window">
+          <field name="name">Reoccuring Invoices</field>
+          <field name="res_model">account.invoice.reoccuring</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+          <field name="target">current</field>
+      </record>
+      
+      <menuitem id="account_invoice_reoccuring_menu" name="Reoccuring Invoices" parent="account.menu_finance_configuration" action="account_invoice_reoccuring_action" sequence="10"/>
+        
+  </data>
+</openerp>

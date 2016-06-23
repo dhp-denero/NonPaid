@@ -1,0 +1,2 @@
+id,name,model,function,interval_number,interval_type,numbercall,active
+"reoccuring_invoice_check","Reoccuring Invoice Check",account.invoice.reoccuring,invoice_members,6,hours,-1,true
