@@ -8,7 +8,7 @@
     'data': [
     ],
     'demo': [],
-    'depends': ['crm', 'vuente_google_contacts_sync'],
+    'depends': ['crm', 'vuente_google_contacts_sync', 'crm_custom_fields'],
     'images':[
         'static/description/1.jpg',
     ],
