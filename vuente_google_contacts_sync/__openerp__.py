@@ -6,6 +6,7 @@
     'summary':'Download contacts from google contacts',
     'license':'LGPL-3',
     'data': [
+        'views/res_partner_views.xml',
         'views/config_settings_views.xml',
         'views/google_contacts_views.xml',
         'views/res_users_views.xml',

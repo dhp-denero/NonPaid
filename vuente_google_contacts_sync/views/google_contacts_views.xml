@@ -25,19 +25,6 @@
       	  </field>
       </record>
 
-      <record id="google_contacts_contact_action" model="ir.actions.act_window">
-          <field name="name">google_contacts_contact.action</field>
-          <field name="res_model">res.partner</field>
-          <field name="view_type">form</field>
-          <field name="view_mode">tree,form</field>
-          <field name="domain">[('google_contacts_id','!=', False)]</field>
-          <field name="help" type="html">
-		<p>
-                    Do not create here
-                </p>
-      	  </field>
-      </record>
-
       <menuitem id="google_contacts_menu" name="Google Contact Sync" parent="base.menu_administration" sequence="200" action="google_contacts_action"/>
       <menuitem id="google_contacts_contacts_menu" name="Google Contacts" parent="base.menu_sales" sequence="200" action="google_contacts_contact_action"/>
 
