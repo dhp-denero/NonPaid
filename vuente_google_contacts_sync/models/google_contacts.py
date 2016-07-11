@@ -69,7 +69,7 @@ class GoogleContacts(models.Model):
         
         #Fetch the first 25 and get the total results in the process
         start_index = 1
-        response_string = requests.get("https://www.google.com/m8/feeds/contacts/default/full?v=3.0&alt=json&start-index=" + str(start_index) + "&group=" + my_contacts_group, headers=headers)
+        response_string = requests.get("https://www.google.com/m8/feeds/contacts/default/full?v=3.0&alt=json&start-index=" + str(start_index), headers=headers)
 
         google_contacts_json = json.loads(response_string.text.encode('utf-8'))
         total_results = google_contacts_json['feed']['openSearch$totalResults']['$t']
@@ -129,7 +129,7 @@ class GoogleContacts(models.Model):
 
             #Fetch the content for the next page
             start_index += 25
-            response_string = requests.get("https://www.google.com/m8/feeds/contacts/default/full?v=3.0&alt=json&start-index=" + str(start_index) + "&group=" + my_contacts_group, headers=headers)
+            response_string = requests.get("https://www.google.com/m8/feeds/contacts/default/full?v=3.0&alt=json&start-index=" + str(start_index), headers=headers)
             google_contacts_json = json.loads(response_string.text.encode('utf-8'))
 
         
