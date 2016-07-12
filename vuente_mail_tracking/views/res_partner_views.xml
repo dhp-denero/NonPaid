@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_mail_partner_tracking" model="ir.ui.view">
+            <field name="name">mail.partner.tracking</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button name="open_mail_sent" type="object" icon="fa-envelope-o" class="oe_stat_button">
+                        <field name="email_tracking_sent" string="Sent" widget="statinfo"/>
+                    </button>
+                    <button name="open_mail_opened" type="object" icon="fa-envelope-o" class="oe_stat_button">
+                        <field name="email_tracking_opened" string="Opened" widget="statinfo"/>
+                    </button>
+                </div>
+      	    </field>
+        </record>
+
+      <record id="res_partner_track_stats_view_tree" model="ir.ui.view">
+          <field name="name">res.partner.track.stats.view.tree</field>
+          <field name="model">mail.mail.statistics</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="mail_template_id"/>
+                  <field name="marketing_campaign_id"/>
+                  <field name="sent"/>
+                  <field name="opened"/>
+                  <field name="replied"/>
+                  <field name="bounced"/>
+              </tree>
+          </field>
+      </record>        
+        
+    </data>
+</openerp>

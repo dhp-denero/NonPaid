@@ -1,6 +1,6 @@
 {
     'name': "Vuente Mail Tracking",
-    'version': "1.2",
+    'version': "1.3",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Tracks campaign mail open/reply/bounce rate",
@@ -8,6 +8,7 @@
     'data': [
         'views/marketing_campaign_views.xml',
         'views/mail_template_views.xml',
+        'views/res_partner_views.xml',
     ],
     'demo': [],
     'depends': ['mass_mailing','marketing_campaign'],
