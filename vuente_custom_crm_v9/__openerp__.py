@@ -1,6 +1,6 @@
 {
     'name': "Vuente Custom CRM",
-    'version': "1.0.3",
+    'version': "1.0.4",
     'author': "Vuente",
 	'website': 'http://www.vuente.com',
     'category': "Tools",

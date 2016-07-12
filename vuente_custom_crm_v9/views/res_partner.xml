@@ -79,11 +79,11 @@
                                     <field name="fax"/>
                                     <field name="user_ids"  invisible="True"/>
                                     <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
+				    <field name="category_id" widget="many2many_tags" placeholder="Tags..."/>
 				    <field name="website" widget="url" placeholder="e.g. www.vuente.com"/>
                                     <!--<field name="referred_by"/>-->
 				    <!--<field name="referred_web_link" widget="url"/>-->
 				    <!--<field name="referral_web_link" widget="url"/>-->
-				    <field name="category_id" widget="many2many_tags" placeholder="Tags..."/>
 				    <!--<field name="TF10" string="Vuente System Name" widget="url"/>-->
                                 </group>
                             </group>
