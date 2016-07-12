@@ -8,17 +8,31 @@
             <field name="inherit_id" ref="mail.email_template_form"/>
             <field name="arch" type="xml">
                 <div name="button_box" position="inside">
-                    <button name="115" type="action" icon="fa-envelope-o" class="oe_stat_button">
+                    <button name="open_mail_sent" type="object" icon="fa-envelope-o" class="oe_stat_button">
                         <field name="email_tracking_sent" string="Sent" widget="statinfo"/>
                     </button>
-                    <button name="116" type="action" icon="fa-envelope-o" class="oe_stat_button">
+                    <button name="open_mail_opened" type="object" icon="fa-envelope-o" class="oe_stat_button">
                         <field name="email_tracking_opened" string="Opened" widget="statinfo"/>
                     </button>
                 </div>
 
       	    </field>
         </record>
-        
+
+      <record id="email_template_track_stats_view_tree" model="ir.ui.view">
+          <field name="name">email.tempalte.track.stats.view.tree</field>
+          <field name="model">mail.mail.statistics</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="my_partner"/>
+                  <field name="marketing_campaign_id"/>
+                  <field name="sent"/>
+                  <field name="opened"/>
+                  <field name="replied"/>
+                  <field name="bounced"/>
+              </tree>
+          </field>
+      </record>        
         
     </data>
 </openerp>

@@ -16,6 +16,32 @@ class MailTemplateTracking(models.Model):
         
     def _compute_email_tracking_opened(self):
         self.email_tracking_opened = self.env['mail.mail.statistics'].search_count([('mail_template_id','=',self.id), ('opened','!=', False)])
+
+    @api.multi
+    def open_mail_sent(self):
+        self.ensure_one()
+        return {
+            'name': 'Email Template Mail Sent Stats',
+            'view_type': 'form',
+            'view_mode': 'tree,form',
+            'res_model': 'mail.mail.statistics',
+            'views': [(self.env.ref('vuente_mail_tracking.email_template_track_stats_view_tree').id,'tree')],
+            'type': 'ir.actions.act_window',
+            'domain': [('sent','!=',False), ('mail_template_id','=', self.id)],
+        }
+        
+    @api.multi
+    def open_mail_opened(self):
+        self.ensure_one()
+        return {
+            'name': 'Email Template Mail Opened Stats',
+            'view_type': 'form',
+            'view_mode': 'tree,form',
+            'res_model': 'mail.mail.statistics',
+            'views': [(self.env.ref('vuente_mail_tracking.email_template_track_stats_view_tree').id,'tree')],
+            'type': 'ir.actions.act_window',
+            'domain': [('opened','!=',False), ('mail_template_id','=', self.id)],
+        }
     
     @api.multi
     def send_mail_track(self, res_id, campaign_id, force_send=False, raise_exception=False):
