@@ -1,6 +1,6 @@
 {
     'name': "Vuente Automated Task Tunnel",
-    'version': "1.1.3",
+    'version': "1.1.4",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Automaticly crate tasks during mail campaigns",
