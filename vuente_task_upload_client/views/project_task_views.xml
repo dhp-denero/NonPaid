@@ -7,7 +7,7 @@
             <field name="model">project.task</field>
             <field name="inherit_id" ref="project.view_task_form2"/>
             <field name="arch" type="xml">
-      	        <field name="user_id" position="after">
+                <field name="stage_id" position="before">
       	            <button type="object" name="upload_task_vuente" string="Upload Task to Vuente"/>
       	        </field>
       	    </field>
