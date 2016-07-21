@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+      <record id="settings_calendar_default_view_form" model="ir.ui.view">
+          <field name="name">settings.calendar.defaults.sync</field>
+          <field name="model">base.config.settings</field>
+          <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+          <field name="arch" type="xml">
+              <group name="google" position="after">
+                    <div name="calenar_default">
+                        <h2>Calendar Settings</h2>
+
+                        <div>
+                            <div>
+                                <label for="calendar_reminder_defaults_ids"/>
+                                <field name="calendar_reminder_defaults_ids" class="oe_inline" widget="many2many_tags"/>
+                            </div>                            
+                        </div>
+                    </div>
+              
+              </group>
+          </field>
+      </record>
+
+  </data>
+</openerp>
