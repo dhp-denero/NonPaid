@@ -1,6 +1,6 @@
 {
     'name': "Vuente Calendar Defaults",
-    'version': "1.0",
+    'version': "1.0.1",
     'author': "Vuente",
     'category': "Tools",
     'summary':'Default reminder time for calendar',

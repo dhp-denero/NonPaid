@@ -12,8 +12,10 @@ class ConfigSettingsGoogleContacts(models.TransientModel):
     @api.model
     def _default_calendar_reminder_defaults_ids(self):
         default_alarms = self.env['ir.config_parameter'].get_param('default_calendar_alarms')
-
-        return self.env['calendar.alarm'].search([('id', 'in', default_alarms.split(";") )])
+        if default_alarms:
+            return self.env['calendar.alarm'].search([('id', 'in', default_alarms.split(";") )])
+        else:
+            return ""
     
     calendar_reminder_defaults_ids = fields.Many2many('calendar.alarm', string="Default Alarms", default=_default_calendar_reminder_defaults_ids)
 
