@@ -13,6 +13,9 @@ class CalendarEventAlarmDefaults(models.Model):
     def _default_calendar_reminder_defaults_ids(self):
         default_alarms = self.env['ir.config_parameter'].get_param('default_calendar_alarms')
 
-        return self.env['calendar.alarm'].search([('id', 'in', default_alarms.split(";") )])
+        if default_alarms:
+            return self.env['calendar.alarm'].search([('id', 'in', default_alarms.split(";") )])
+        else:
+            return ""
     
     alarm_ids = fields.Many2many('calendar.alarm', default=_default_calendar_reminder_defaults_ids)
