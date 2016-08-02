@@ -29,6 +29,32 @@
         <template id="binary">
             <input type="file" t-att-name="prefix"/>
         </template>                
+
+        <template id="survey_lead" inherit_id="survey.sfinished">
+            <xpath expr="//div[@class='jumbotron mt32']" position="inside">
+                <section class="html_form" data-form-model="crm.lead" data-form-id="0" t-if="survey.lead_survey">
+                      <h2>Enter Info</h2>
+                      <form role="form" method="GET" t-attf-action="/survey/lead/#{survey.id}">
+                        <div id="html_fields" class="oe_structure" style="margin-left:-15px;">
+                          <section data-form-type="textbox" data-field-id="1" class="oe_snippet_body html_form_field col-md-12">
+                            <div class="form-group">
+                              <label class="control-label" for="name" style="font-weight: normal">Name</label>
+                              <input type="text" class="form-control" name="name" maxlength="100"/>
+                            </div>
+                          </section>
+                          <section data-form-type="textbox" data-field-id="2" class="oe_snippet_body html_form_field col-md-12">
+                            <div class="form-group">
+                              <label class="control-label" for="email" style="font-weight: normal">Email</label>
+                              <input type="email" class="form-control" name="email" maxlength="100"/>
+                            </div>
+                          </section>
+                        </div>
+                        <input type="hidden" name="token" t-att-value="token"/>
+                        <input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
+                      </form>
+                </section>
+            </xpath>
+        </template>
         
     </data>
 </openerp>

@@ -10,9 +10,11 @@
         'views/survey_question_views.xml',
         'views/survey_extra_templates.xml',
         'views/survey_user_input_line_views.xml',
+        'views/survey_survey_views.xml',
+        'views/survey_user_input_views.xml',
     ],
     'demo': [],
-    'depends': ['survey'],
+    'depends': ['survey','crm'],
     'images':[
         'static/description/1.jpg',
     ],
