@@ -13,11 +13,9 @@ class SurveyUserInputLineBinary(models.Model):
     
     @api.model
     def save_line_binary(self, user_input_id, question, post, answer_tag):
-        _logger.error("survey binary")
-        _logger.error(post)
-        answer = base64.encodestring(post[answer_tag].read() )
         
-        _logger.error(answer)
+        
+        
         vals = {
             'user_input_id': user_input_id,
             'question_id': question.id,
@@ -26,6 +24,11 @@ class SurveyUserInputLineBinary(models.Model):
             'skipped': False,
         }
         if answer_tag in post:
+            answer = ""
+            
+            if post[answer_tag] != '':
+                answer = base64.encodestring(post[answer_tag].read() )
+            
             vals.update({'answer_type': 'binary', 'binary_data': answer})
         else:
             vals.update({'answer_type': None, 'skipped': True})

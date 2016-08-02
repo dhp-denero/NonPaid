@@ -1,3 +1,7 @@
+v1.0.1
+======
+* Fix bug where survey ould not save if file select as empty
+
 v1.0
 ====
 * Initial release
