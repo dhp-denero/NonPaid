@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Hide the conditional questions by default -->
+        <template id="survey_conditional" inherit_id="survey.page">
+            <xpath expr="//div[@class='js_question-wrapper']" position="before">
+                <!-- dynamic javascript, onclick of the conditional question -->
+                <script t-if="question.conditional">
+                   $("input[name='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.conditional_question_id.id"/>']").click(function() {
+                       if (this.value == <t t-esc="question.conditional_option_id.id"/>) {
+                           //Show the conditional question
+                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'inline-block');
+                       } else {
+                           //Hide the question if they go back and change thier choice
+                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'none');                       
+                       }
+                   });
+                </script>
+            </xpath>
+            <xpath expr="//div[@class='js_question-wrapper']" position="attributes">
+                <attribute name="t-attf-style">#{question.conditional and 'display:none;' ''}</attribute>
+            </xpath>
+            <xpath expr="//div[@class='js_errzone alert alert-danger']" position="before">
+                <t t-if="question.type == 'binary'"><t t-call="vuente_survey_extra.binary"/></t>
+            </xpath>            
+        </template>
+
+        <template id="binary">
+            <input type="file" t-att-name="prefix"/>
+        </template>                
+        
+    </data>
+</openerp>

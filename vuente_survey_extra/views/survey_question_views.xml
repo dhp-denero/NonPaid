@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        
+        <record id="con_survey" model="ir.ui.view">
+            <field name="name">survey.question.view.form.inherit.conditional</field>
+            <field name="model">survey.question</field>
+            <field name="inherit_id" ref="survey.survey_question_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Conditions">
+                        <group>
+                            <field name="survey_id" invisible="True"/>
+                            <field name="conditional"/>
+                            <field name="conditional_question_id" domain="[('type','=','simple_choice'), ('survey_id','=',survey_id)]" attrs="{'invisible':[('conditional', '=', False)]}" />
+                            <field name="conditional_option_id" attrs="{'invisible':[('conditional', '=', False)]}" domain="[('question_id','=',conditional_question_id)]"/>                    
+                        </group>
+                    </page>
+                </notebook>
+                <!--<field name="labels_ids" position="inside">
+                    <field name="conditional_question_ids"/>
+                </field>-->
+            </field>
+       </record>
+       
+   </data>
+</openerp>
