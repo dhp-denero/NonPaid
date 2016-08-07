@@ -1,6 +1,6 @@
 {
     'name': "Vuente Survey Extra",
-    'version': "1.0.1",
+    'version': "1.0.2",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Conditional questions and file uploads",

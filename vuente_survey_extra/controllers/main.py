@@ -18,9 +18,9 @@ class SurveyLeadController(http.Controller):
  	for field_name, field_value in kw.items():
             values[field_name] = field_value
 
-        my_lead = request.env['crm.lead'].create({'name': values['name'] + " (Survey Lead)", 'contact_name': values['name'], 'email_from': values['email'] })
+        my_lead = request.env['crm.lead'].sudo().create({'name': values['name'] + " (Survey Lead)", 'contact_name': values['name'], 'email_from': values['email'] })
             
-        survey_answer = request.env['survey.user_input'].search([('token','=',values['token'] )])
+        survey_answer = request.env['survey.user_input'].sudo().search([('token','=',values['token'] )])
         survey_answer.lead_id = my_lead.id
         
         return werkzeug.utils.redirect("/")

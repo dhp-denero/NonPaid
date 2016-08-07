@@ -1,3 +1,7 @@
+v1.0.2
+======
+* Fix permission issue
+
 v1.0.1
 ======
 * Fix bug where survey ould not save if file select as empty
