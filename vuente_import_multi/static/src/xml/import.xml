@@ -1,11 +1,12 @@
-<templates>
-    <t t-extend="ListView.buttons" t-name="Vuente.MultiImport">
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="ListView.buttons">
         <t t-if='widget.options.import_enabled' t-jquery="button.o_list_button_add" t-operation="after">
             <div class="btn-group btn-group-sm oe-groupby-menu">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
                     Import <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" role="menu" id="vuente_multi_import">
+                <ul class="dropdown-menu" role="menu" id="vuente_multi_import_list">
                     <li data-index="0"><a class="o_list_button_import">CSV</a></li>
                 </ul>
             </div>
