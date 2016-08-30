@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_marketing_campaign_activity_form_inherit_vamcc" model="ir.ui.view">
+            <field name="name">vamcc.marketing.campaign.activity</field>
+            <field name="model">marketing.campaign</field>
+            <field name="inherit_id" ref="marketing_campaign.view_marketing_campaign_form"/>
+            <field name="arch" type="xml">
+      	        <field name="activity_ids" position="after">
+                    <separator string="Transitions"/>
+      	            <field name="transition_ids">
+      	                <tree>
+      	                    <field name="activity_from_id"/>
+      	                    <field name="trigger"/>
+      	                    <field name="name"/>
+          	            <field name="activity_to_id"/>
+      	                </tree>
+      	            </field>
+      	        </field>
+      	    </field>
+        </record>
+                
+    </data>
+</openerp>
