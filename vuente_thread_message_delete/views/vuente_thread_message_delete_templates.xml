@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="chat_extend_client_backend_assets" name="Chat Extend Assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/vuente_thread_message_delete/static/src/js/chat.js"></script>
+            </xpath>
+        </template>
+        
+    </data>
+</openerp>

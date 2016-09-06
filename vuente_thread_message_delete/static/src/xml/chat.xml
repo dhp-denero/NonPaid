@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="mail.ChatThread.Message">
+        <t t-jquery="i.o_thread_message_needaction" t-operation="after">
+            <i style="float:right;" class="fa fa-lg o_thread_trashcan fa-trash-o " t-att-data-message-id="message.id" title="Delete"/>
+        </t>
+    </t>
+</templates>
