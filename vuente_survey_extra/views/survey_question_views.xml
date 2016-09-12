@@ -17,9 +17,9 @@
                         </group>
                     </page>
                 </notebook>
-                <!--<field name="labels_ids" position="inside">
-                    <field name="conditional_question_ids"/>
-                </field>-->
+                <xpath expr="//field[@name='labels_ids']/tree" position="inside">                
+                    <field name="category_ids" context="{'default_label_id': active_id}"/>
+                </xpath>
             </field>
        </record>
        

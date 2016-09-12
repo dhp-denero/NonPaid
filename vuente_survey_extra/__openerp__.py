@@ -12,6 +12,7 @@
         'views/survey_user_input_line_views.xml',
         'views/survey_survey_views.xml',
         'views/survey_user_input_views.xml',
+        'views/survey_label_category_views.xml',
     ],
     'demo': [],
     'depends': ['survey','crm'],
