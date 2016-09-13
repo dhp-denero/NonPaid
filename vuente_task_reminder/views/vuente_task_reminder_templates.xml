@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+        
+        <record id="task_reminder" model="mail.template">
+            <field name="name">Task Reminder</field>
+            <field name="model_id" ref="model_res_users"></field>
+            <field name="email_from">${user.email}</field>            
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="subject">Task Reminder</field>
+            <field name="body_html"><![CDATA[
+                <p>Dear ${object.name},</p>
+                <p>Here is a list of tasks assigned to you</p>
+                <hr/>
+                <p>_task_list_</p>
+            ]]>
+            </field>
+        </record>
+
+</data>
+</openerp>

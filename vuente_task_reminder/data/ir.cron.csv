@@ -1,0 +1,2 @@
+id,name,model,function,interval_number,interval_type,numbercall,active
+"task_check","Task Reminder Check",project.task,send_email_reminder,24,hours,-1,true
