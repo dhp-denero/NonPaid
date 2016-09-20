@@ -21,6 +21,7 @@
                 </field>
                 <field name="quizz_mode" position="after">
                     <field name="lead_survey"/>
+                    <field name="partner_survey"/>
                 </field>
             </field>
        </record>

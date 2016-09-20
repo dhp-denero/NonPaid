@@ -1,3 +1,7 @@
+v1.1
+====
+* Partner surveys
+
 v1.0.2
 ======
 * Fix permission issue

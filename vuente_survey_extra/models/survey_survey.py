@@ -6,6 +6,7 @@ class SurveySurveyLeads(models.Model):
     _inherit = "survey.survey"
     
     lead_survey = fields.Boolean(string="Lead Survey")
+    partner_survey = fields.Boolean(string="Partner Survey")
     category_ids = fields.One2many('survey.category', 'survey_id', string="Categories")
     
 class SurveySurveyCategory(models.Model):

@@ -24,3 +24,18 @@ class SurveyLeadController(http.Controller):
         survey_answer.lead_id = my_lead.id
         
         return werkzeug.utils.redirect("/")
+        
+    @http.route('/survey/partner/<survey_id>', type="http", auth="public", website=True)
+    def survey_partner(self, survey_id, **kw):
+        """Associate to partner from email"""
+ 
+        values = {}
+ 	for field_name, field_value in kw.items():
+            values[field_name] = field_value
+
+        my_partner = request.env['res.partner'].sudo().search([('email','=',values['email'])])[0]
+            
+        survey_answer = request.env['survey.user_input'].sudo().search([('token','=',values['token'] )])
+        survey_answer.partner_id = my_partner.id
+        
+        return werkzeug.utils.redirect("/")
