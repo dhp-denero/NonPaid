@@ -1,6 +1,6 @@
 {
     'name': "Vuente Survey Extra",
-    'version': "1.1",
+    'version': "1.2",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Conditional questions and file uploads",
@@ -16,7 +16,7 @@
         'views/res_partner_views.xml',
     ],
     'demo': [],
-    'depends': ['survey','crm'],
+    'depends': ['survey','crm','marketing_campaign'],
     'images':[
         'static/description/1.jpg',
     ],

@@ -1,3 +1,7 @@
+v1.2
+====
+* Fires off campaign during partner survey
+
 v1.1
 ====
 * Partner surveys

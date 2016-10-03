@@ -37,5 +37,12 @@ class SurveyLeadController(http.Controller):
             
         survey_answer = request.env['survey.user_input'].sudo().search([('token','=',values['token'] )])
         survey_answer.partner_id = my_partner.id
+
+        #Add the new partner to a campaign
+        for act in survey_answer.survey_id.campaign_id.activity_ids:
+            if act.start:
+                wi = request.env['marketing.campaign.workitem'].sudo().create({'campaign_id': survey_answer.survey_id.campaign_id.id, 'activity_id': act.id, 'res_id': my_partner.id})
+                wi.process()
+                request.env['mail.mail'].process_email_queue()
         
         return werkzeug.utils.redirect("/")

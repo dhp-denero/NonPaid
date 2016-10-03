@@ -8,6 +8,7 @@ class SurveySurveyLeads(models.Model):
     lead_survey = fields.Boolean(string="Lead Survey")
     partner_survey = fields.Boolean(string="Partner Survey")
     category_ids = fields.One2many('survey.category', 'survey_id', string="Categories")
+    campaign_id = fields.Many2one('marketing.campaign', string="Marketing Campaign")
     
 class SurveySurveyCategory(models.Model):
 
