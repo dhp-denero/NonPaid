@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <template id="indi_page_cust" inherit_id="website.user_navbar" name="Individual Page Customization">
+        <xpath expr="//li[@id='customize-menu']//li[@class='divider']" position="after">
+            <li class="dropdown-header">PAGE CUSTOMIZATION</li>
+            <li role="presentation" id="salesremoveheader"><a href="#" data-action="sales_remove_header" role="menuitem"><strong class="fa fa-square-o"></strong> Remove Header</a></li>
+            <li role="presentation" id="salesremovefooter"><a href="#" data-action="sales_remove_footer" role="menuitem"><strong class="fa fa-square-o"></strong> Remove Footer</a></li>
+            <li class="divider"></li>
+        </xpath>
+    </template>
+
+
+  </data>
+</openerp>

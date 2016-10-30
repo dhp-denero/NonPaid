@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <template id="buy_now_editor" inherit_id="website.assets_editor" name="Sales Page Resources">
+        <xpath expr="/t" position="inside">
+            <script type="text/javascript" src="/website_sales_page_crafito/static/src/js/website.sales.page.snippets.editor.js" />
+        </xpath>
+    </template>
+
+    <template id="website_buy_now_options" name="Buy Now Options" inherit_id="website.snippet_options">
+        <xpath expr="//div" position="after">
+            <div data-js='buy_now_button'
+                data-selector=".buy_now_button"
+                data-drop-in=".oe_structure, [data-oe-type=html]">
+            </div>
+        </xpath>
+    </template>
+
+<template id="buy_now_navbar" inherit_id="website.snippets" name="Buy Now Navbar">
+    <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+        <t t-snippet="website_sales_page_crafito.s_button" t-thumbnail="/website_sales_page_crafito/static/src/img/ui/buy_now.jpg"/>
+        <t t-snippet="website_sales_page_crafito.s_nomenu" t-thumbnail="/website_sales_page_crafito/static/src/img/ui/no_menu.jpg"/>
+        <t t-snippet="website_sales_page_crafito.s_nofooter" t-thumbnail="/website_sales_page_crafito/static/src/img/ui/no_footer.jpg"/>
+    </xpath>    
+</template>
+
+<template id="s_button" name="Buy Now Button">
+    <section class="buy_now_button">
+        <div class="col-md-12 text-center mt16 mb32">
+            <h2><a class="btn btn-warning btn-lg" href="/buy/now">Buy Now</a></h2>
+        </div>
+    </section>
+</template>
+
+<template id="s_nomenu" name="Remove Menu">
+    <section class="remove_menu">
+        <script>
+            document.getElementsByClassName("navbar navbar-default navbar-static-top")[0].style.display = 'none';
+            document.getElementsByClassName("page-title")[0].style.display = 'none';
+         </script>
+    </section>
+</template>
+
+<template id="s_nofooter" name="Remove Footer">
+    <section class="remove_footer">
+        <script>
+        window.onload = function() {
+            document.getElementsByTagName("footer")[0].style.display = 'none';
+        }
+        </script>
+    </section>
+</template>
+
+  </data>
+</openerp>
