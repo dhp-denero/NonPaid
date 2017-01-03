@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="mark_count_filter_count" model="ir.ui.view">
+            <field name="name">Marketing Campaign Filter Count</field>
+            <field name="model">marketing.campaign.segment</field>
+            <field name="inherit_id" ref="marketing_campaign.view_marketing_campaign_segment_form" />
+            <field name="arch" type="xml">
+                <field name="ir_filter_id" position="after">
+                    <field name="filter_count"/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

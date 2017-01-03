@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+
+    <div t-name="vuente_iframe_help.iframe" class="oe_view_manager oe_mail_wall oe_view_manager_current" style="height:100%;">
+        <iframe>
+        </iframe>
+    </div>
+
+</template>
