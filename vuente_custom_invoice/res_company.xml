@@ -19,7 +19,6 @@
             <field name="arch" type="xml">
 
 
-<?xml version="1.0"?>
 <t t-name="report.external_layout_header">     
                     <div class="header">         
                         <div class="row">
