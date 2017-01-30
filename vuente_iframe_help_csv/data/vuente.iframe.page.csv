@@ -1,0 +1,5 @@
+"id","menu_id/id","menu_id_name","menu_id_parent_id/id","sequence","link"
+"website_iframe","tutorials_website_menu","Website","tutorials_top_menu","1","http://vuente.com"
+"crm_iframe","tutorials_crm_menu","CRM","tutorials_top_menu","2","http://vuente.com"
+"accounting_iframe","tutorials_accounting_menu","Accounting","tutorials_top_menu","3","http://vuente.com"
+"project_iframe","tutorials_project_menu","Project","tutorials_top_menu","4","http://vuente.com"

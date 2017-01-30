@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <menuitem id="tutorials_top_menu" name="Tutorials" sequence="999"/>
+    
+    <record id="website_action" model="ir.actions.client">
+        <field name="name">Website Menu Action</field>
+        <field name="tag">vuente_iframe_help.iframe</field>
+    </record>
+    <menuitem id="tutorials_website_menu" name="Website" parent="tutorials_top_menu" action="website_action" sequence="10"/>
+
+    <record id="crm_action" model="ir.actions.client">
+        <field name="name">CRM Menu Action</field>
+        <field name="tag">vuente_iframe_help.iframe</field>
+    </record>
+    <menuitem id="tutorials_crm_menu" name="CRM" parent="tutorials_top_menu" action="crm_action" sequence="20"/>
+
+    <record id="accounting_action" model="ir.actions.client">
+        <field name="name">Accounting Menu Action</field>
+        <field name="tag">vuente_iframe_help.iframe</field>
+    </record>
+    <menuitem id="tutorials_accounting_menu" name="Accounting" parent="tutorials_top_menu" action="accounting_action" sequence="30"/>
+
+    <record id="project_action" model="ir.actions.client">
+        <field name="name">Project Menu Action</field>
+        <field name="tag">vuente_iframe_help.iframe</field>
+    </record>
+    <menuitem id="tutorials_project_menu" name="Project" parent="tutorials_top_menu" action="project_action" sequence="40"/>
+    
+</data>
+</openerp>
