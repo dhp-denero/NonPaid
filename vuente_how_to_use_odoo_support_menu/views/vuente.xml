@@ -9,7 +9,7 @@
           <field name="url">http://vuente.com/slides</field>
       </record>
         
-      <menuitem id="vuente_support" name="Help" sequence="900" action="support_action" />
+      <menuitem id="vuente_support" name="Vuente Tutorials" sequence="900" action="support_action" web_icon="vuente_how_to_use_odoo_support_menu,static/description/icon.png"/>
         
   </data>
 </openerp>
