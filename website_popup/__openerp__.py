@@ -1,6 +1,6 @@
 {
     'name': "Website Popup",
-    'version': "1.0",
+    'version': "1.1",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Create popups with custom HTML",
