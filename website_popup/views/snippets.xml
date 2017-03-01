@@ -24,41 +24,40 @@
 </template>
 
 <template id="s_popup" name="Popup Campaign">
-    <section class="popup_button">
-            <div style="text-align:center;">
-                <a id="popup_button" href="#iamapopup" class="btn btn-primary btn-lg o_default_snippet_text" contenteditable="true">Click Me</a>
-            </div>
-            <!-- Popup Window -->
-            <div class="modal fade" id="oe_generic_popup_modal">
-                <div class="modal-dialog modal-content" style="min-height:200px;">
-                    <div class="modal-body" id="pop_html">
-                        
-                            <h2 style="text-align:center;">Please fill in the form below</h2>
-        <form action="/popup/campaign" method="POST" class="form-horizontal mt32" enctype="multipart/form-data">
-
-                            <input type="hidden" name="popup_campaign_id" id="popup_campaign_id" value="0"/>
-                            <input type="hidden" name="return_url" id="popup_return_url" value=""/>
-                            <div class="form-group">
-                                <label for="name" class="control-label col-md-2">Name</label>
-                                <div class="col-md-10">
-                                    <input type="text" name="name" class="form-control"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-		                <label for="email" class="control-label col-md-2">Email</label>
-		                <div class="col-md-10">
-		                    <input type="text" name="email" class="form-control"/>
-                                </div>
-                            </div>
-                                <input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
-                            
-                            </form>
-                        
-                    </div>
+     <section class="popup_button">
+              <div style="text-align:center;">
+                <a id="popup_button" href="#iamapopup" class="btn btn-primary btn-lg o_default_snippet_text">Click Me</a>
+              </div>
+              <div class="modal fade" id="oe_generic_popup_modal">
+                <div class="modal-dialog modal-content" style="border:solid 5px red; min-height:200px;max-width:400px;">
+                  <div class="modal-body" id="pop_html">
+                  <a href="#" class="o_popup_btn_close o_not_editable o_default_snippet_text pull-right" data-dismiss="modal" style="font-size:30px">×</a>
+                    <br/>
+                    <h2 style="text-align:center; font-size 24px; font-weight:bold" class="o_default_snippet_text">Great, Let's Get Started</h2>
+                    <form action="/popup/campaign" method="POST" class="form-horizontal mt32" enctype="multipart/form-data">
+                      <input type="hidden" name="popup_campaign_id" id="popup_campaign_id" value="2"/>
+                      <input type="hidden" name="return_url" id="popup_return_url" value=""/>
+                      <div class="form-group">
+                        <!--<label for="name" class="control-label col-md-2 o_default_snippet_text"/>-->
+                        <div class="col-md-12">
+                          <input type="text" placeholder="Name" name="name" class="form-control"/>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <!--<label for="email" class="control-label col-md-2 o_default_snippet_text"/>-->
+                        <div class="col-md-12">
+                          <input type="text" placeholder="Email" name="email" class="form-control"/>
+                        </div>
+                      </div>
+                      <br/>
+                      <div class="text-center">
+                        <input type="submit" style="background-color: red" class="btn btn-primary btn-lg" value="Submit super cal french alistic"/>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-            </div>
-            <!-- End Popup Window -->
-    </section>
+              </div>
+            </section>
 </template>
 
   </data>
