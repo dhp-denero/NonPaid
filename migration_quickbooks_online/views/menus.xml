@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="migration_top_menu" name="Migration" sequence="80"/>        
+    <menuitem id="migration_parent_menu" parent="migration_top_menu" name="Migration" sequence="10"/>
+    <menuitem id="migration_quickbooks_menu" parent="migration_parent_menu" name="Quickbooks Import" action="migration_quickbooks_action" sequence="10"/>
+    
+</odoo>

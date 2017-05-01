@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="migration_quickbooks_form_view" model="ir.ui.view">
+        <field name="name">migration.quickbooks form view</field>
+        <field name="model">migration.quickbooks</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+      	            <field name="oauth_consumer_key"/>
+      	            <field name="oauth_consumer_secret"/>
+      	        </group>
+                <button type="object" name="auth_quickbooks" string="Auth"/>
+                <button type="object" name="import_employees" string="Import Empoyees"/>
+                <button type="object" name="import_customers" string="Import Customers"/>
+                <button type="object" name="import_invoices" string="Import Invoices"/>
+      	    </form>
+      	</field>
+    </record>
+
+    <record id="migration_quickbooks_tree_view" model="ir.ui.view">
+        <field name="name">migration.quickbooks tree view</field>
+        <field name="model">migration.quickbooks</field>
+        <field name="arch" type="xml">
+            <tree>
+      	        <field name="name"/>
+      	    </tree>
+      	</field>
+    </record>
+
+    <record id="migration_quickbooks_action" model="ir.actions.act_window">
+        <field name="name">Quickbooks Import</field>
+        <field name="res_model">migration.quickbooks</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
