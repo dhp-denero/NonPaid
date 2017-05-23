@@ -5,7 +5,6 @@ import werkzeug
 import json
 import urllib2
 import requests
-import math
 from openerp.http import request
 from datetime import datetime, timedelta
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT, exception_to_unicode
@@ -21,7 +20,7 @@ class GoogleContacts(models.Model):
     _description = "Google Contacts"
     
     fake_field = fields.Char(string="Fake Field")
-    model = fields.Selection([('crm.lead','Leads'), ('res.partner','Partners')], string="Import as", default="crm.lead")
+    
     
     def need_authorize(self):
         return self.env.user.google_contacts_rtoken is False
@@ -56,81 +55,65 @@ class GoogleContacts(models.Model):
     def cron_sync(self):
         gs_pool = self.env['google.service']
 
+        #Get a new access token
+        all_token = self.env['google.service']._refresh_google_token_json(self.env.user.google_contacts_rtoken, 'contacts')
+        
         access_token = self.env.user.google_contacts_token
-        
+
         headers = {'Authorization': 'Bearer ' + access_token, 'GData-Version': '3.0'}
-
-        #Get the 'My Contacts' Group
-        response_string = requests.get("https://www.google.com/m8/feeds/groups/default/full/?v=3.0&alt=json", headers=headers)
-        google_contacts_group_json = json.loads(response_string.text.encode('utf-8'))
-
-        my_contacts_group = google_contacts_group_json['feed']['entry'][0]['id']['$t']
-        
-        
-        #Fetch the first 25 and get the total results in the process
-        start_index = 1
-        response_string = requests.get("https://www.google.com/m8/feeds/contacts/default/full?v=3.0&alt=json&start-index=" + str(start_index), headers=headers)
-
+        response_string = requests.get("https://www.google.com/m8/feeds/contacts/default/full?alt=json", headers=headers)
+        _logger.error(response_string.text.encode('utf-8'))
         google_contacts_json = json.loads(response_string.text.encode('utf-8'))
-        total_results = google_contacts_json['feed']['openSearch$totalResults']['$t']
-
-        num_pages = math.ceil( int(total_results) / 25)
-  
-        for page in range(1, int(num_pages) + 1):
-  
-            account_email = google_contacts_json['feed']['id']['$t'] 
+            
+        account_email = google_contacts_json['feed']['id']['$t'] 
         
-            for contact in google_contacts_json['feed']['entry']:    
-                if 'gd$name' not in contact:
-                    continue
+        for contact in google_contacts_json['feed']['entry']:
             
-                contact_id = contact['id']['$t']
+            if 'gd$name' not in contact:
+                continue
             
-                g_contact_dict = {'google_contacts_id': contact_id, 'customer': False, 'google_contacts_account': account_email}
-
-                g_contact_dict['name'] = contact['gd$name']['gd$fullName']['$t']
+            contact_id = contact['id']['$t']
             
-                if 'gd$email' in contact:
-                    g_contact_dict['email'] = contact['gd$email'][0]['address']
+            g_contact_dict = {'google_contacts_id': contact_id, 'customer': False, 'google_contacts_account': account_email}
 
-                if 'gd$phoneNumber' in contact:
-                    g_contact_dict['phone'] = contact['gd$phoneNumber'][0]['$t']
+            g_contact_dict['name'] = contact['gd$name']['gd$fullName']['$t']
             
-                if 'gd$structuredPostalAddress' in contact:
-                    if 'gd$street' in contact['gd$structuredPostalAddress'][0]:
-                        g_contact_dict['street'] = contact['gd$structuredPostalAddress'][0]['gd$street']['$t']
+            if 'gd$email' in contact:
+                g_contact_dict['email'] = contact['gd$email'][0]['address']
 
-                    if 'gd$city' in contact['gd$structuredPostalAddress'][0]:
-                        g_contact_dict['city'] = contact['gd$structuredPostalAddress'][0]['gd$city']['$t']
+            if 'gd$phoneNumber' in contact:
+                g_contact_dict['phone'] = contact['gd$phoneNumber'][0]['$t']
+            
+            if 'gd$structuredPostalAddress' in contact:
+                if 'gd$street' in contact['gd$structuredPostalAddress'][0]:
+                    g_contact_dict['street'] = contact['gd$structuredPostalAddress'][0]['gd$street']['$t']
 
-                    if 'gd$region' in contact['gd$structuredPostalAddress'][0]:
-                        state = contact['gd$structuredPostalAddress'][0]['gd$region']['$t']
+                if 'gd$city' in contact['gd$structuredPostalAddress'][0]:
+                    g_contact_dict['city'] = contact['gd$structuredPostalAddress'][0]['gd$city']['$t']
+
+                if 'gd$region' in contact['gd$structuredPostalAddress'][0]:
+                    state = contact['gd$structuredPostalAddress'][0]['gd$region']['$t']
                     
-                        #Find the corresponding state in out database
-                        state_search = self.env['res.country.state'].search([('name','=', state)])
-                        if state_search:
-                            g_contact_dict['state_id'] = state_search[0].id
+                    #Find the corresponding state in out database
+                    state_search = self.env['res.country.state'].search([('name','=', state)])
+                    if state_search:
+                        g_contact_dict['state_id'] = state_search[0].id
 
-                    if 'gd$country' in contact['gd$structuredPostalAddress'][0]:
-                        country = contact['gd$structuredPostalAddress'][0]['gd$country']['$t']
+                if 'gd$country' in contact['gd$structuredPostalAddress'][0]:
+                    country = contact['gd$structuredPostalAddress'][0]['gd$country']['$t']
 
-                        #Find the corresponding country in out database
-                        country_search = self.env['res.country'].search([('name','=', country)])
-                        if country_search:
-                            g_contact_dict['country_id'] = country_search[0].id
+                    #Find the corresponding country in out database
+                    country_search = self.env['res.country'].search([('name','=', country)])
+                    if country_search:
+                        g_contact_dict['country_id'] = country_search[0].id
     
-                existing_contact = self.env['res.partner'].search([('google_contacts_id', '=', contact_id)])
-                if len(existing_contact) > 0:
-                    #Update existing partner
-                    existing_contact.write(g_contact_dict)
-                else:
-                    #Create new partner
-                    self.env['res.partner'].create(g_contact_dict)
-
-            #Fetch the content for the next page
-            start_index += 25
-            response_string = requests.get("https://www.google.com/m8/feeds/contacts/default/full?v=3.0&alt=json&start-index=" + str(start_index), headers=headers)
-            google_contacts_json = json.loads(response_string.text.encode('utf-8'))
+            existing_contact = self.env['res.partner'].search([('google_contacts_id', '=', contact_id)])
+            if existing_contact:
+                #Update existing partner
+                existing_contact.write(g_contact_dict)
+            else:
+                #Create new partner
+                self.env['res.partner'].create(g_contact_dict)
 
         
     def get_google_scope(self):
