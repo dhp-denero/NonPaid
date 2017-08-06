@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <template id="blog_signature_options" name="Popup Options" inherit_id="website.snippet_options">
+        <xpath expr="//div" position="after">
+            <div data-js='popup_button'
+                data-selector=".popup_button"
+                data-drop-in="div">
+            </div>
+        </xpath>
+    </template>
+
+	<template id="blog_signature" inherit_id="website.snippets" name="Blog Signature">
+		<xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="after">
+			<t t-snippet="website_popup.s_popup" t-thumbnail="/blog_signature/static/src/img/ui/snippet_thumb_popup.jpg"/>
+		</xpath>    
+	</template>
+	<template id="blog_signature" name="Blog Signature">
+		<section class="s_text_image">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-1 mt16">
+					  <h3>
+						<b>Join Myself and Vuente</b>
+					  </h3>
+					  <p>
+						<i>
+						  <b>Anthony Gardiner, (AG)</b>
+						</i>
+					  </p>
+					  <p style="margin-left: 1.5em;">Creator, and Founder of Vuente.</p>
+					  <p style="margin-left: 1.5em;">Passionate Business Builder and Mental Health Advocate</p>
+					  <p style="margin-left: 1.5em;">Online Marketer, Video Blogger, and Digitial Coach</p>
+					  <p style="margin-left: 1.5em;">A Techie Guy Who Loves Business Process Automation</p>
+					  <p style="margin-left: 1.5em;">A Human Who Loves Seeing Other Humans Succeed</p>
+					  <p style="margin-left: 1.5em;">Contributing To Others Mental Health and Wellbeing</p>
+					  <p>
+						<b>
+						  <i>Vuente ~ Your Site for Support In Business and Life</i>
+						</b>
+					  </p>
+					  <p style="margin-left: 1.5em;">Simple Systems ~ Supportive Skills ~ Affordable Advice</p>
+					</div>
+					<div class="mt32 col-md-4">
+					  <img class="img img-responsive shadow mb16 img-circle" src="/web/image/16571" alt="Text and image block" style=""/>
+					</div>
+				  </div>
+				</div>
+			  </section>
+			  <section class="s_title bg-primary">
+				<div class="container">
+				  <div class="row">
+					<div class="col-md-12">
+					  <h1 class="text-center">How Could We Help You?</h1>
+					</div>
+				  </div>
+				</div>
+			  </section>
+			  <section class="s_features">
+				<div class="container">
+				  <div class="row mt16 mb16">
+					<div class="text-center col-md-3">
+					  <span class="fa fa-gears fa-5x" style=""/>
+					  <h3 class="mb0 mt8">Simplified Systems</h3>
+					  <p class="text-muted">Learn More About Our Template Systems Ready To Save You Time Effort and Cash In Your Business</p>
+					  <p class="text-muted">
+						<a href="http://http:www.yourultimatebusinesssystem.com" class="btn btn-warning btn-lg">Click To Learn More -&amp;gt;</a>
+					  </p>
+					</div>
+					<div class="text-center col-md-3">
+					  <span class="fa fa-wechat fa-5x" style="animation: none;"/>
+					  <h3 class="mt8 mb0">Supportive Skills &amp;nbsp;</h3>
+					  <p class="text-muted">As Our Business Grows We&amp;nbsp;Quite Often Need Extra Help Yet Not Ready For a Full-Time Team Member, We Can Help</p>
+					  <p class="text-muted">
+						<a href="http://www.vuente.com" class="btn btn-warning btn-lg">Click To Learn More -&amp;gt;</a>
+					  </p>
+					</div>
+					<div class="text-center col-md-3">
+					  <span class="fa fa-question fa-5x" style=""/>
+					  <h3 class="mb0 mt8">Affordable Advice</h3>
+					  <p class="text-muted">Growing a Business Can Be Challenging. Book a Call With One Of Our Consultants&amp;nbsp;</p>
+					  <p> </p>
+					  <p class="text-muted">
+						<a href="http://www.vuente.com" class="btn btn-warning btn-lg">Click To Learn More -&amp;gt;</a>
+					  </p>
+					  <p/>
+					</div>
+					<div class="text-center col-md-3">
+					  <span class="fa fa-heart fa-5x" style=""/>
+					  <h3 class="mt8 mb0">&amp;nbsp;Conscious Living&amp;nbsp;</h3>
+					  <p class="text-muted">Our Passion Program Is To Help Others Understand How Their Mind Works. For Happier and Mentally Healthier Lives</p>
+					  <p> </p>
+					  <p class="text-muted">
+						<a href="http://www.vuente.com" class="btn btn-warning btn-lg">Click To Learn More -&amp;gt;</a>
+					  </p>
+					  <p/>
+					</div>
+				  </div>
+				</div>
+			  </section>
+		</template>
+
+</data>
+</openerp>
