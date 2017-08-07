@@ -4,20 +4,21 @@
 
     <template id="blog_signature_options" name="Popup Options" inherit_id="website.snippet_options">
         <xpath expr="//div" position="after">
-            <div data-js='popup_button'
-                data-selector=".popup_button"
+            <div data-js='s-blog-sig'
+                data-selector=".s-blog-sig"
                 data-drop-in="div">
             </div>
         </xpath>
     </template>
 
-	<template id="blog_signature" inherit_id="website.snippets" name="Blog Signature">
-		<xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="after">
-			<t t-snippet="website_popup.s_popup" t-thumbnail="/blog_signature/static/src/img/ui/snippet_thumb_popup.jpg"/>
+	<template id="blog_signature_block" inherit_id="website.snippets" name="Blog Signature">
+		<xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+			<t t-snippet="blog_signature.blog_signature" t-thumbnail="/blog_signature/static/src/img/ui/snippet_thumb_sig.jpg"/>
 		</xpath>    
 	</template>
+	
 	<template id="blog_signature" name="Blog Signature">
-		<section class="s_text_image">
+		<section class="s_text_image s-blog-sig">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-1 mt16">

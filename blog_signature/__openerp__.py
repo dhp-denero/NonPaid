@@ -1,6 +1,6 @@
 {
     'name': "Website Personilized Blog Signature Snippet",
-    'version': "1.1",
+    'version': "1.2",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Create your personilized blog signature",
