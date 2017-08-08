@@ -11,9 +11,11 @@ class MailTemplateTracking(models.Model):
     email_tracking_sent = fields.Integer(string="Emails Sent", compute='_compute_email_tracking_sent')
     email_tracking_opened = fields.Integer(string="Emails Opened", compute='_compute_email_tracking_opened')
 
+    @api.one
     def _compute_email_tracking_sent(self):
         self.email_tracking_sent = self.env['mail.mail.statistics'].search_count([('mail_template_id','=',self.id), ('sent','!=', False)])
         
+    @api.one
     def _compute_email_tracking_opened(self):
         self.email_tracking_opened = self.env['mail.mail.statistics'].search_count([('mail_template_id','=',self.id), ('opened','!=', False)])
 
