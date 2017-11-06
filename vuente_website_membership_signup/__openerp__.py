@@ -1,6 +1,6 @@
 {
     'name': "Vuente Website Membership Signup",
-    'version': "1.0",
+    'version': "10.0",
     'author': "Vuente",
     'category': "Tools",
     'summary': "Creates signup forms for membeships",
