@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="membership_signup_form" name="Membership Signup Form" page="True">
+    <t t-call="website.layout">
+        <div class="container">
+
+
+            <div class="mt16 mb16">
+                <h1 class="text-center"><t t-esc="membership.name"/></h1>
+            </div>
+            <p><t t-esc="membership.description_sale"/></p>
+            <h1>Membership Signup</h1>
+            <form method="POST" action="/site/membership/signup/process" enctype="multipart/form-data" class="mb16 mt16">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" required="True"/>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" required="True"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" required="True"/>
+                </div>
+                <t t-foreach="membership.extra_fields" t-as="extra_field">
+                    <div class="form-group">
+                        <label t-att-for="extra_field.name"><t t-esc="extra_field.field_description"/></label>
+                        <input type="text" t-att-name="extra_field.name" class="form-control"/>
+                    </div>
+                </t>
+                <input type="hidden" name="membership_id" t-att-value="membership.id"/>
+                <button t-attf-class="btn btn-primary btn-lg">Sign up</button>
+            </form>
+        </div>            
+    </t>
+</template>
+
+</data>
+</openerp>

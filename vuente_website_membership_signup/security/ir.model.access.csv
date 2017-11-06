@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_template_memebrship,access membership product.template,model_product_template,,1,0,0,0
+access_res_groups_memebrship,access membership res.groups,base.model_res_groups,,1,1,0,0
+access_ir_module_category,access membership ir.module.category.template,base.model_ir_module_category,,1,0,0,0
