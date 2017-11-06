@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        
+        <record id="survey_user_input_line_view_form_inherit_binary" model="ir.ui.view">
+            <field name="name">survey.user_input_line.view.form.inherit.binary</field>
+            <field name="model">survey.user_input_line</field>
+            <field name="inherit_id" ref="survey.survey_user_input_line_form"/>
+            <field name="arch" type="xml">
+                <field name="skipped" position="after">
+                    <field name="binary_data" filename="binary_data_filename"/>
+                    <field name="binary_data_filename"/>
+                </field>
+            </field>
+       </record>
+       
+   </data>
+</openerp>
