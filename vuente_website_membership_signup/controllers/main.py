@@ -60,7 +60,8 @@ class WebsiteMembershipSignup(http.Controller):
         request.session.authenticate(request.env.cr.dbname, values['email'], values['password'])
 
         order = request.website.sale_get_order(force_create=1)
-        cart_values = order._cart_update(product_id=membership.id, add_qty=1)
+        membership_product = request.env['product.product'].sudo().search([('product_tmpl_id', '=', membership.id)])[0]
+        cart_values = order._cart_update(product_id=membership_product.id, add_qty=1)
 
         #Redirect them to thier profile page
         return werkzeug.utils.redirect("/shop/checkout")
